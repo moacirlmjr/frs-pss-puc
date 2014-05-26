@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../_template.xhtml">
+
+
+	<ui:define name="conteudo">
+
+		<h:form>
+			<p:messages autoUpdate="true" />
+			<p:growl autoUpdate="true" />
+
+			<p:fieldset legend="Cadastro do Cachorro">
+
+				<p:panelGrid columns="2">
+
+					<h:outputLabel value="Nome:" for="nome" />
+					<p:inputText id="nome" value="#{cachorroBean.cachorro.nome}"
+						required="true" requiredMessage="Nome Obrigatório">
+						<f:validateLength minimum="5" />
+					</p:inputText>
+
+
+					<h:outputLabel value="Raca: " for="raca" />
+					<p:selectOneMenu name="select" id="raca"
+						value="#{cachorroBean.racaID}">
+						<f:selectItems value="#{racaBean.racas}" var="raca"
+							itemLabel="#{raca.raca}" itemValue="#{raca.id}" />
+					</p:selectOneMenu>
+
+					<h:outputLabel value="Data de Nascimento: " for="dataNascimento" />
+					<p:calendar id="dataNascimento"
+						value="#{cachorroBean.cachorro.dataNascimento.time}"
+						required="true" requiredMessage="Data de nascimento Obrigatória"
+						pattern="dd/MM/yyyy"
+						validator="#{cachorroBean.validaDataNascimento}" />
+
+					<h:outputLabel value="Sexo do animal: " for="sexo" />
+					<p:selectOneMenu name="selecaoSexo" id="sexo"
+						value="#{cachorroBean.cachorro.sexo}">
+						<f:selectItem itemValue="0" itemLabel="selecione..." />
+						<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+						<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+					</p:selectOneMenu>
+					<p:commandButton value="Gravar" action="#{cachorroBean.gravar}" />
+				</p:panelGrid>
+			</p:fieldset>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

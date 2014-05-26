@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../_template.xhtml">
+
+
+	<ui:define name="conteudo">
+
+		<h:form>
+			<p:messages autoUpdate="true" />
+			<p:growl autoUpdate="true" />
+
+			<p:fieldset legend="Cadastro de Usuario - Admin">
+
+				<p:panelGrid columns="4">
+
+					<h:outputLabel value="Nome:" for="nome" />
+					<p:inputText id="nome" value="#{usuarioBean.usuario.nome}"
+						required="true" requiredMessage="Nome Obrigatório"
+						title="Digite aqui o nome!">
+						<f:validateLength minimum="5" />
+					</p:inputText>
+
+
+					<h:outputLabel value="Telefone: " for="fone" />
+					<p:inputMask id="fone" value="#{usuarioBean.usuario.telefone}"
+						required="true" requiredMessage="Telefone Obrigatório"
+						mask="(999) 9999-9999"
+						title="Digite aqui o telefone - Verifique a máscara!">
+					</p:inputMask>
+
+					<h:outputLabel value="Email: " for="mail" />
+					<p:inputText id="mail" value="#{usuarioBean.usuario.email}"
+						required="true" requiredMessage="Email Obrigatório"
+						title="Digite aqui o email!">
+						<f:validateLength minimum="5" maximum="90" />
+					</p:inputText>
+
+					<h:outputLabel value="Twitter: " for="twitter" />
+					<p:inputText id="twitter" value="#{usuarioBean.usuario.twitter}"
+						required="true" requiredMessage="Twitter Obrigatório"
+						title="Digite aqui o Twitter - @algumaCoisa">
+						<f:validateLength minimum="5" maximum="90" />
+					</p:inputText>
+
+					<h:outputLabel value="Sexo: " for="sexo" />
+					<p:selectOneMenu name="selecaoSexo" id="sexo"
+						value="#{usuarioBean.usuario.sexo}"
+						title="Escolha o sexo do usuario!">
+						<f:selectItem itemValue="" itemLabel="selecione..." />
+						<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+						<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+					</p:selectOneMenu>
+
+					<h:outputLabel value="Role do usuário: " for="roleID" />
+					<p:selectOneMenu name="selecaoRole" id="roleID"
+						value="#{usuarioBean.roleID}" title="Escolha o perfil do usuario!">
+						<f:selectItem itemValue="0" itemLabel="selecione..." />
+						<f:selectItem itemValue="1" itemLabel="Usuário Administrador" />
+						<f:selectItem itemValue="2" itemLabel="Usuário Receptor" />
+						<f:selectItem itemValue="3" itemLabel="Usuário doador" />
+					</p:selectOneMenu>
+
+					<h:outputLabel value="Login: " for="login" />
+					<p:inputText id="login" value="#{usuarioBean.usuario.login}"
+						required="true" requiredMessage="Login Obrigatório"
+						title="Digite uma senha!">
+						<f:validateLength minimum="5" maximum="14" />
+					</p:inputText>
+
+					<h:outputLabel value="Senha: " for="senha" />
+					<p:password id="senha" value="#{usuarioBean.usuario.senha}"
+						required="true" requiredMessage="Senha Obrigatório"
+						feedback="true" title="Digite uma senha!">
+						<f:validateLength minimum="5" maximum="14" />
+					</p:password>
+					<p:commandButton value="Gravar"
+						action="#{usuarioBean.gravarUsuario}" ajax="false" />
+				</p:panelGrid>
+			</p:fieldset>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

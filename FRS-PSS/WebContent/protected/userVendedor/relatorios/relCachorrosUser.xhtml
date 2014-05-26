@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatorio de Cachorros">
+			<p:dataTable value="#{cachorroBean.cachorrosUsuario}" var="cachorro"
+				style="text-align:center" paginator="true" rows="3">
+				<p:column>
+					<f:facet name="header">Identificador</f:facet>
+					<h:outputText value="#{cachorro.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{cachorro.nome}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Raca</f:facet>
+					<h:outputText value="#{cachorro.raca.raca}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Porte</f:facet>
+					<h:outputText value="#{cachorro.raca.porte.porte}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Data de Nascimento</f:facet>
+					<h:outputText value="#{cachorro.dataNascimento.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Sexo</f:facet>
+					<h:outputText value="#{cachorro.sexo}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Imagem</f:facet>
+					<p:graphicImage
+						value="/resources/img/cachorros/#{cachorro.raca.raca}.jpg" />
+				</p:column>
+			</p:dataTable>
+		</p:fieldset>
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:messages autoUpdate="true" />
+		<p:growl autoUpdate="true" />
+
+		<p:fieldset legend="Relatório de Recomendações">
+			<h:form id="formPrincipal">
+				<p:dataTable var="recomendacao"
+					value="#{recomendacaoBean.recomendacoesUsuario}" id="tabelaDados"
+					paginator="true" paginatorAlwaysVisible="true" rows="3"
+					style="text-align:center">
+					<f:facet name="header">Recomendações Cadastradas</f:facet>
+
+					<!-- <p:column headerText="Data Interesse">
+						<h:outputText value="#{recomendacao.interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column> -->
+
+					<p:column headerText="Data">
+						<h:outputText value="#{recomendacao.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Raca">
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Livro">
+						<h:outputText value="#{recomendacao.livro.nome}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Nome do dono">
+						<h:outputText value="#{recomendacao.livro.dono.nome}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Email">
+						<h:outputText value="#{recomendacao.livro.dono.email}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Telefone">
+						<h:outputText value="#{recomendacao.livro.dono.telefone}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+
+					<p:column headerText="Status">
+						<h:outputText value="#{recomendacao.status}" />
+					</p:column>
+
+					<p:column headerText="Ações">
+						<p:commandLink title="Confirmar Recomendação"
+							action="#{recomendacaoBean.tornarConfirmada}" ajax="false">
+							<p:graphicImage library="img" name="ok_icon.png" />
+							<f:setPropertyActionListener
+								target="#{recomendacaoBean.recomendacao}"
+								value="#{recomendacao}" />
+						</p:commandLink>
+
+						<p:commandLink title="Tornar Inativa"
+							action="#{recomendacaoBean.tornarInativa}" ajax="false">
+							<p:graphicImage library="img" name="edit_icon.png" />
+							<f:setPropertyActionListener
+								target="#{recomendacaoBean.recomendacao}"
+								value="#{recomendacao}" />
+						</p:commandLink>
+
+						<p:commandLink title="Excluir recomendacao"
+							action="#{recomendacaoBean.excluir}" ajax="false">
+							<p:graphicImage library="img" name="delete_icon.png" />
+							<f:setPropertyActionListener
+								target="#{recomendacaoBean.recomendacao}"
+								value="#{recomendacao}" />
+						</p:commandLink>
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>FRS</title>
+</h:head>
+<h:body>
+	<div id="cabecalho">
+		<h:graphicImage library="img" name="logo.png" />
+		<br />
+
+		<h:form>
+			<p:menubar>
+				<p:submenu label="Cadastro">
+					<p:menuitem value="Interesse" action="cadastroInteresse" />
+				</p:submenu>
+				<p:submenu label="Relatórios">
+					<p:menuitem value="Interesse" action="relInteresses" />
+					<p:menuitem value="Recomendação" action="relRecomendacoes" />
+
+				</p:submenu>
+				<p:submenu label="Meus dados">
+					<p:menuitem value="Verificar meus dados"
+						action="dadosDoUsuarioReceptor" />
+				</p:submenu>
+				<p:submenu label="Sair">
+					<p:menuitem value="Finalizar sessão" action="#{loginBean.logOut}" />
+				</p:submenu>
+
+				<p:menuitem
+					style="position: absolute; right: 20px; color:red; font-weight:bold"
+					value="olá, #{loginBean.usuarioLogado.login}" />
+
+			</p:menubar>
+
+		</h:form>
+
+		<hr />
+		<h1>
+			<ui:insert name="titulo"></ui:insert>
+		</h1>
+	</div>
+
+	<div id="conteudo">
+		<ui:insert name="conteudo">
+		</ui:insert>
+	</div>
+	<br />
+	<hr />
+	<div id="rodape" style="align: justify">
+		<p:fieldset style="align: justify">Desenvolvido por GR Solutions</p:fieldset>
+	</div>
+
+</h:body>
+
+</html>

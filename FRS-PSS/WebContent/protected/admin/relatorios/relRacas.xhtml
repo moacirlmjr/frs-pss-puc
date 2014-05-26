@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatorio de Racas">
+			<p:dataTable value="#{racaBean.racas}" var="raca" paginator="true"
+				style="text-align:center" rows="3">
+				<p:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{raca.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Descrição</f:facet>
+					<h:outputText value="#{raca.raca}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Porte</f:facet>
+					<h:outputText value="#{raca.porte.porte}" />
+				</p:column>
+				<p:column headerText="Imagem" style="width:25%">
+					<p:graphicImage value="/resources/img/cachorros/#{raca.raca}.jpg" />
+				</p:column>
+			</p:dataTable>
+		</p:fieldset>
+	</ui:define>
+
+</ui:composition>
+</html>

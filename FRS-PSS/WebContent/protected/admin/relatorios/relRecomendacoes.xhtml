@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatório de Recomendações">
+			<h:form id="formPrincipal">
+				<p:dataTable var="recomendacao" style="text-align:center"
+					value="#{recomendacaoBean.recomendacoes}" id="tabelaDados"
+					paginator="true" paginatorAlwaysVisible="true" rows="5">
+					<f:facet name="header">Recomendações Cadastradas</f:facet>
+
+					<p:column headerText="Data Recomendacao">
+						<h:outputText value="#{recomendacao.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Data Interesse">
+						<h:outputText value="#{recomendacao.interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Interessado">
+						<h:outputText value="#{recomendacao.interesse.usuario.nome}" />
+					</p:column>
+
+					<p:column headerText="Raca de Interesse">
+						<h:outputText
+							value="#{recomendacao.interesse.racasDeInteresse.raca}" />
+					</p:column>
+
+					<p:column headerText="Nome do cachorro">
+						<h:outputText value="#{recomendacao.cachorro.nome}" />
+					</p:column>
+
+					<p:column headerText="Nome do dono">
+						<h:outputText value="#{recomendacao.cachorro.dono.nome}" />
+					</p:column>
+
+					<p:column headerText="Fone">
+						<h:outputText value="#{recomendacao.cachorro.dono.telefone}" />
+					</p:column>
+
+					<p:column headerText="Status">
+						<h:outputText value="#{recomendacao.status}" />
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
+	</ui:define>
+</ui:composition>
+</html>

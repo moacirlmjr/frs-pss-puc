@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatório de Interesses">
+			<h:form id="formPrincipal">
+				<p:dataTable var="interesse" style="text-align:center"
+					value="#{interesseBean.interesses}" id="tabelaInteresses" rows="3"
+					paginator="true">
+					<f:facet name="header">Interesses Cadastrados</f:facet>
+
+					<p:column headerText="Data do Registro">
+						<h:outputText value="#{interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Usuario">
+						<h:outputText value="#{interesse.usuario.nome}" />
+					</p:column>
+
+					<p:column headerText="Email">
+						<h:outputText value="#{interesse.usuario.email}" />
+					</p:column>
+
+					<p:column headerText="Telefone">
+						<h:outputText value="#{interesse.usuario.telefone}" />
+					</p:column>
+
+					<p:column headerText="Status">
+						<h:outputText value="#{interesse.status}" />
+					</p:column>
+
+					<p:column headerText="Raca">
+						<h:outputText value="#{interesse.racasDeInteresse.raca}" />
+					</p:column>
+
+					<p:column headerText="Porte">
+						<h:outputText value="#{interesse.racasDeInteresse.porte.porte}" />
+					</p:column>
+
+					<p:column headerText="Imagem" style="width:25%">
+						<p:graphicImage
+							value="/resources/img/cachorros/#{interesse.racasDeInteresse.raca}.jpg" />
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+
+		</p:fieldset>
+
+	</ui:define>
+</ui:composition>
+</html>

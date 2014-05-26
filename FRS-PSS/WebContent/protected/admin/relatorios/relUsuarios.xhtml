@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatorio de Usuarios">
+			<h:form>
+				<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}"
+					var="usuario" paginator="true" rows="7" style="text-align:center">
+					<p:column>
+						<f:facet name="header">Id</f:facet>
+						<h:outputText value="#{usuario.id}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{usuario.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Sexo</f:facet>
+						<h:outputText value="#{usuario.sexo}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Twitter</f:facet>
+						<h:outputText value="#{usuario.twitter}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{usuario.email}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Telefone</f:facet>
+						<h:outputText value="#{usuario.telefone}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Perfil</f:facet>
+						<h:outputText value="#{usuario.role.role}" />
+					</p:column>
+				</p:dataTable>
+
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaUsuarios" fileName="users" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaUsuarios" fileName="users" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaUsuarios" fileName="users" />
+				</h:commandLink>
+			</h:form>
+
+		</p:fieldset>
+	</ui:define>
+</ui:composition>
+</html>

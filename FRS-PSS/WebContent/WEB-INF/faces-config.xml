@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<!-- Navegacoes na pasta USER-PUBLIC -->
+	<navigation-rule>
+
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/public/login.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/public/login.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>acessoNegado</from-outcome>
+			<to-view-id>/public/acessoNegado.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>instrucoes</from-outcome>
+			<to-view-id>public/instrucoes.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>contato</from-outcome>
+			<to-view-id>public/contato.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroUsuarioPublico</from-outcome>
+			<to-view-id>public/usuario.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+		<!-- Navegacoes na pasta USER-COMPRADOR -->
+
+		<navigation-case>
+			<from-outcome>cadastroInteresse</from-outcome>
+			<to-view-id>/protected/userComprador/cadastros/interesse.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dadosDoUsuarioReceptor</from-outcome>
+			<to-view-id>/protected/userComprador/relatorios/relDadosUser.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relInteresses</from-outcome>
+			<to-view-id>/protected/userComprador/relatorios/relInteresses.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relRecomendacoes</from-outcome>
+			<to-view-id>/protected/userComprador/relatorios/relRecomendacoesReceptor.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+
+		<!-- Navegacoes na pasta USER-VENDEDOR -->
+		<navigation-case>
+			<from-outcome>cadastroLivro</from-outcome>
+			<to-view-id>/protected/userVendedor/cadastros/livro.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioLivrosUsuario</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relCachorrosUser.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioInteressesDoador</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relInteressesDoador.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dadosDoUsuarioDonor</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relDadosUser.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+
+
+
+		<!-- Navegacoes na pasta USER-ADMIN -->
+		<navigation-case>
+			<from-outcome>cadastroUsuario</from-outcome>
+			<to-view-id>/protected/admin/cadastros/usuario.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroEditora</from-outcome>
+			<to-view-id>/protected/admin/cadastros/editora.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroCategoria</from-outcome>
+			<to-view-id>/protected/admin/cadastros/categoria.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioRacas</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relRacas.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioPortes</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relPortes.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioCachorros</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relCachorros.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioUsuarios</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relUsuarios.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioUsuariosSemInteresse</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relUsuariosSemInteresses.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioUsuariosSemRecomendacao</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relUsuariosSemRecomendacao.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioInteresses</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relInteresses.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioRecomendacoes</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relRecomendacoes.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+
+	<lifecycle>
+		<phase-listener>br.com.frs.util.LogPhaseListener</phase-listener>
+	</lifecycle>
+
+</faces-config>
