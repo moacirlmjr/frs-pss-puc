@@ -81,6 +81,23 @@ public class RecomendacaoBean {
 		System.out.println("Entreeeeeeeeeeeeei: " + auxNovo.size());
 		return auxNovo;
 	}
+	
+	
+	public List<Recomendacao> getRecomendacoesCompradorVendedor() {
+		Usuario u = LoginUtil.retornaUsuarioLogado();
+		//LivroBean livroBean = new LivroBean();
+		//List<Livro> livrosVendedor = livroBean.getLivrosUsuario(u);
+		
+		ArrayList<Recomendacao> todasRec = (ArrayList<Recomendacao>) new DAO<Recomendacao>(Recomendacao.class).listaTodos();
+		ArrayList<Recomendacao> recVendedor = new ArrayList<Recomendacao>();
+		for (Recomendacao r : todasRec) {
+			if (r.getLivro().getDono().equals(u)) {
+				recVendedor.add(r);
+			}
+		}
+		System.out.println("Entreeeeeeeeeeeeei: " + recVendedor.size());
+		return recVendedor;
+	}
 
 	public List<Recomendacao> getRecomendacoesConfirmadasUsuario() {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
@@ -163,6 +180,14 @@ public class RecomendacaoBean {
 	}
 
 	public void excluir() {
+		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
+				+ this.recomendacao.getLivro().getNome()
+				+ " excluido com sucesso!");
+	}
+	
+
+	public void executarConfirmacao() {
 		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
 		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
 				+ this.recomendacao.getLivro().getNome()

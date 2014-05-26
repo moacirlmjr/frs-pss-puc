@@ -100,6 +100,12 @@ public class LivroBean {
 		params.put("uid", doador.getId());
 		return new DAO<Livro>(Livro.class).findListResults(Livro.findAllLivrosDono, params);
 	}
+	
+	public List<Livro> getLivrosUsuario(Usuario u) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("uid", u.getId());
+		return new DAO<Livro>(Livro.class).findListResults(Livro.findAllLivrosDono, params);
+	}
 
 	public void gravar() {
 		FacesContext context = FacesContext.getCurrentInstance();

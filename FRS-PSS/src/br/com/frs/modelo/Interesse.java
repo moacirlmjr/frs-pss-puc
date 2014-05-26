@@ -21,10 +21,13 @@ import br.com.frs.util.CalendarUtil;
 @Entity
 @NamedQueries(value = {
 		@NamedQuery(name = "Interesse.findAllInteresses", query = "select i from Interesse i order by usuario_id"),
+		@NamedQuery(name = "Interesse.findAllInteressados", query = "select i from Interesse i where categoria_id = :cid"),
 		@NamedQuery(name = "Interesse.findAllInteressesUser", query = "select i from Interesse i where usuario_id = :uid"),
 		@NamedQuery(name = "Interesse.findAllInteressesAtivos", query = "select i from Interesse i where status = 'ATIVO' order by dataRegistro desc"),
 		@NamedQuery(name = "Interesse.findAllInteressesInativos", query = "select i from Interesse i where status = 'INATIVO' order by dataRegistro desc"),
-		@NamedQuery(name = "Interesse.findAllInteressesAtendidos", query = "select i from Interesse i where status = 'ATENDIDO' order by dataRegistro desc")})
+		@NamedQuery(name = "Interesse.findAllInteressesAtendidos", query = "select i from Interesse i where status = 'ATENDIDO' order by dataRegistro desc")
+		}
+)
 public class Interesse implements Generic {
 
 	/**
@@ -36,6 +39,8 @@ public class Interesse implements Generic {
 	public static final String findAllInteressesInativos = "Interesse.findAllInteressesInativos";
 	public static final String findAllInteressesAtendidos = "Interesse.findAllInteressesAtendidos";
 	public static final String findAllInteressesUser = "Interesse.findAllInteressesUser";
+	public static final String findAllInteressadosVendedor = "Interesse.findAllInteressados";
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

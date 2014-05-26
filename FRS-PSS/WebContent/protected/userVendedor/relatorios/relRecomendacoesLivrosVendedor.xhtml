@@ -15,7 +15,7 @@
 			<h:form id="formPrincipal">
 				
 				<p:dataTable var="recomendacao"
-					value="#{recomendacaoBean.recomendacoesUsuario}" id="tabelaDados"
+					value="#{recomendacaoBean.recomendacoesCompradorVendedor}" id="tabelaDados"
 					paginator="true" paginatorAlwaysVisible="true" rows="5"
 					style="text-align:center">
 					<f:facet name="header">Recomendações Cadastradas</f:facet>
@@ -37,22 +37,39 @@
 							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
 						</h:outputText>
 					</p:column>
-
-					<!-- <p:dataTable var="Livro" value="#{recomendacao.livro}">
-						<p:column headerText="Nome do livro">
-							<h:outputText value="#{livro.nome}" />
-						</p:column>
-						<p:column headerText="Nome do dono">
-							<h:outputText value="#{cachorro.dono.nome}" />
-						</p:column>
-						<p:column headerText="Fone">
-							<h:outputText value="#{cachorro.dono.telefone}" />
-						</p:column>
-
-					</p:dataTable> -->
+					
+					<p:column headerText="Nome do Interessado">
+						<h:outputText
+							value="#{recomendacao.interesse.usuario.nome}">
+						</h:outputText>
+					</p:column>
+					
+					<p:column headerText="Email do Interessado">
+						<h:outputText
+							value="#{recomendacao.interesse.usuario.email}">
+						</h:outputText>
+					</p:column>
+					
+					<p:column headerText="Telefone do Interessado">
+						<h:outputText
+							value="#{recomendacao.interesse.usuario.telefone}">
+						</h:outputText>
+					</p:column>
 
 					<p:column headerText="Status">
 						<h:outputText value="#{recomendacao.status}" />
+					</p:column>
+					
+					<p:column headerText="Ações">
+						<p:commandLink title="Executar Recomendação"
+							action="#{recomendacaoBean.executarConfirmacao}" ajax="false">
+							<p:graphicImage library="img" name="ok_icon.png" />
+							<f:setPropertyActionListener
+								target="#{recomendacaoBean.recomendacao}"
+								value="#{recomendacao}" />
+						</p:commandLink>
+
+						
 					</p:column>
 
 				</p:dataTable>

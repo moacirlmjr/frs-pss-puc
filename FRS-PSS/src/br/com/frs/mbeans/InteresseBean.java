@@ -1,5 +1,7 @@
 package br.com.frs.mbeans;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +14,8 @@ import org.apache.commons.mail.EmailException;
 import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Categoria;
 import br.com.frs.modelo.Interesse;
+import br.com.frs.modelo.Livro;
+import br.com.frs.modelo.Recomendacao;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.modelo.enumerator.InteresseStatus;
 import br.com.frs.util.CalendarUtil;
@@ -39,7 +43,6 @@ public class InteresseBean {
 		this.interesse = interesse;
 	}
 
-	
 	public Categoria getSelectedCategoria() {
 		return selectedCategoria;
 	}
@@ -73,6 +76,28 @@ public class InteresseBean {
 		params.put("uid", u.getId());
 		return new DAO<Interesse>(Interesse.class).findListResults(
 				Interesse.findAllInteressesUser, params);
+
+	}
+
+	public List<Interesse> getInteressesVendedor() {
+		Usuario u = LoginUtil.retornaUsuarioLogado();
+		LivroBean lb = new LivroBean();
+		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
+		List<Interesse> todosInteresses = getInteresses();
+		List<Interesse> interessesVendedor = new ArrayList<Interesse>();
+
+		for (Interesse i : todosInteresses) {
+
+			for (Livro l : livrosUsuario) {
+
+				if ((i.getCategoriaDeInteresse().getId() == l.getCategoria()
+						.getId())
+						&& (i.getStatus().equals(InteresseStatus.ATIVO))) {
+					interessesVendedor.add(i);
+				}
+			}
+		}
+		return interessesVendedor;
 
 	}
 
@@ -124,6 +149,28 @@ public class InteresseBean {
 		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
 				+ this.interesse.getCategoriaDeInteresse().getCategoria()
 				+ " excluido com sucesso!");
+
+	}
+
+	public void executarConfirmacao() {
+		Calendar dataDeHoje = Calendar.getInstance();
+		RecomendacaoBean rb = new RecomendacaoBean();
+		Recomendacao rec = new Recomendacao();
+		rec.setInteresse(this.interesse);
+
+		Usuario u = LoginUtil.retornaUsuarioLogado();
+		LivroBean lb = new LivroBean();
+		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
+
+		for (Livro l : livrosUsuario) {
+			if (l.getCategoria().getCategoria() == this.interesse
+					.getCategoriaDeInteresse().getCategoria()) {
+				rec.setLivro(l);
+				rec.setDataRegistro(dataDeHoje);
+				rb.gravar(rec);
+				this.interesse.setStatus(InteresseStatus.ATENDIDO);
+			}
+		}
 
 	}
 
