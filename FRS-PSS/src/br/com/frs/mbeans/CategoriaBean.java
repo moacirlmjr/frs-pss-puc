@@ -9,29 +9,32 @@ import javax.faces.bean.RequestScoped;
 import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Categoria;
 import br.com.frs.modelo.CategoriaDataModel;
-import br.com.frs.modelo.Editora;
 import br.com.frs.util.JSFMessageUtil;
 
 @ManagedBean
 @RequestScoped
 public class CategoriaBean {
 
-	private Categoria cat;
+	private Categoria categoria;
 	private CategoriaDataModel cdm;
+	private List<Categoria> categorias;
 
 	public CategoriaBean() {
-		cat = new Categoria();
+		categorias = new DAO<Categoria>(Categoria.class).listaTodos();
+		categoria = new Categoria();
 		cdm = new CategoriaDataModel((ArrayList<Categoria>) getCategorias());
 	}
 
-	private List<Categoria> getCategorias() {
-		return new DAO<Categoria>(Categoria.class).listaTodos();
-
+	
+	public List<Categoria> getCategorias() {
+		return categorias;
 	}
 
-	public List<Editora> getEditoras() {
-		return new DAO<Editora>(Editora.class).listaTodos();
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
 	}
+
 
 	public CategoriaDataModel getCdm() {
 		return cdm;
@@ -41,11 +44,18 @@ public class CategoriaBean {
 		this.cdm = cdm;
 	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 	public void gravar() {
-		System.out.println("Gravando Categoria " + this.cat.getCategoria());
-		new DAO<Categoria>(Categoria.class).adiciona(cat);
-		JSFMessageUtil
-				.sendInfoMessageToUser("Categoria cadastrado com sucesso!!!");
+		System.out.println("Gravando Categoria " + this.categoria.getCategoria());
+		new DAO<Categoria>(Categoria.class).adiciona(categoria);
+		JSFMessageUtil.sendInfoMessageToUser("Categoria cadastrado com sucesso!!!");
 	}
 
 }

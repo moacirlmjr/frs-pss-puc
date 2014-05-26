@@ -13,6 +13,7 @@
 
 		<p:fieldset legend="Relatório de Recomendações">
 			<h:form id="formPrincipal">
+				
 				<p:dataTable var="recomendacao"
 					value="#{recomendacaoBean.recomendacoesUsuario}" id="tabelaDados"
 					paginator="true" paginatorAlwaysVisible="true" rows="5"
@@ -31,16 +32,15 @@
 						</h:outputText>
 					</p:column>
 
-					<p:column headerText="Raca de Interesse">
+					<p:column headerText="categoria de Interesse">
 						<h:outputText
-							value="#{recomendacao.interesse.racasDeInteresse.raca}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
 						</h:outputText>
 					</p:column>
 
-					<p:dataTable var="Cachorro" value="#{recomendacao.cachorros}">
-						<p:column headerText="Nome do cachorro">
-							<h:outputText value="#{cachorro.nome}" />
+					<!-- <p:dataTable var="Livro" value="#{recomendacao.livro}">
+						<p:column headerText="Nome do livro">
+							<h:outputText value="#{livro.nome}" />
 						</p:column>
 						<p:column headerText="Nome do dono">
 							<h:outputText value="#{cachorro.dono.nome}" />
@@ -49,7 +49,7 @@
 							<h:outputText value="#{cachorro.dono.telefone}" />
 						</p:column>
 
-					</p:dataTable>
+					</p:dataTable> -->
 
 					<p:column headerText="Status">
 						<h:outputText value="#{recomendacao.status}" />

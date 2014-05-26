@@ -15,6 +15,8 @@ import javax.faces.validator.ValidatorException;
 import javax.servlet.http.HttpServletRequest;
 
 import br.com.frs.dao.DAO;
+import br.com.frs.modelo.Categoria;
+import br.com.frs.modelo.Editora;
 import br.com.frs.modelo.Livro;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.util.JSFMessageUtil;
@@ -25,9 +27,31 @@ public class LivroBean {
 
 	private Livro livro;
 	private Integer livroID;
+	private Integer categoriaID;
+	private Integer editoraID;
 
 	public LivroBean() {
 		livro = new Livro();
+	}
+
+	public Integer getCategoriaID() {
+		return categoriaID;
+	}
+
+	public void setCategoriaID(Integer categoriaID) {
+		this.categoriaID = categoriaID;
+	}
+
+	public Integer getEditoraID() {
+		return editoraID;
+	}
+
+	public void setEditoraID(Integer editoraID) {
+		this.editoraID = editoraID;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 	public Livro getLivro() {
@@ -50,9 +74,8 @@ public class LivroBean {
 		return new DAO<Livro>(Livro.class).listaTodos();
 	}
 
-	
-	public void validaDataNascimento(FacesContext context, UIComponent component,
-			Object value) {
+	public void validaDataNascimento(FacesContext context,
+			UIComponent component, Object value) {
 
 		Date dataInicio = (Date) value;
 
@@ -83,13 +106,16 @@ public class LivroBean {
 		HttpServletRequest request = (HttpServletRequest) context
 				.getExternalContext().getRequest();
 		Usuario doador = (Usuario) request.getSession().getAttribute("usuario");
-		//Categoria r = new DAO<Raca>(Raca.class).buscaPorId(racaID);
+		Categoria cat = new DAO<Categoria>(Categoria.class).buscaPorId(categoriaID);
+		Editora ed = new DAO<Editora>(Editora.class).buscaPorId(editoraID);
 		this.livro.setDono(doador);
-		//this.livro.setRaca(r);
+		this.livro.setEditora(ed);
+		this.livro.setCategoria(cat);
 		System.out.println("adicionando o cachorro" + this.livro.getNome()
 				+ "do doador" + this.livro.getDono().getNome());
 		new DAO<Livro>(Livro.class).adiciona(livro);
-		JSFMessageUtil.sendInfoMessageToUser(this.livro.getNome() + " adicionado com sucesso!!!");
+		JSFMessageUtil.sendInfoMessageToUser(this.livro.getNome()
+				+ " adicionado com sucesso!!!");
 
 	}
 

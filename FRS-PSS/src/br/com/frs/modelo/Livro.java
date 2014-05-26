@@ -18,7 +18,7 @@ import br.com.frs.modelo.interfaces.Recomendable;
 @Entity
 @NamedQueries(value = {
 		@NamedQuery(name = "Livro.findAllLivrosOrdenadosCategoria", query = "select c from Livro c order by nome asc"),
-		@NamedQuery(name = "LIVRO.findAllLivrosDono", query = "select c from Livro c where dono_id = :uid") })
+		@NamedQuery(name = "Livro.findAllLivrosDono", query = "select c from Livro c where dono_id = :uid") })
 public class Livro implements Generic, Recomendable {
 
 	private static final long serialVersionUID = 1L;

@@ -71,16 +71,25 @@
 			<to-view-id>/protected/userVendedor/cadastros/livro.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
+		
 		<navigation-case>
 			<from-outcome>relatorioLivrosUsuario</from-outcome>
-			<to-view-id>/protected/userVendedor/relatorios/relCachorrosUser.jsf</to-view-id>
+			<to-view-id>/protected/userVendedor/relatorios/relLivrosUser.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
+		
 		<navigation-case>
-			<from-outcome>relatorioInteressesDoador</from-outcome>
-			<to-view-id>/protected/userVendedor/relatorios/relInteressesDoador.jsf</to-view-id>
+			<from-outcome>relatorioInteressesVendedor</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relInteressadosLivrosVendedor.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>relatorioRecomendacoes</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		
 		<navigation-case>
 			<from-outcome>dadosDoUsuarioDonor</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relDadosUser.jsf</to-view-id>

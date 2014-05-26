@@ -11,39 +11,43 @@
 
 	<ui:define name="conteudo">
 
-		<p:fieldset legend="Relatorio de Cachorros">
-			<p:dataTable value="#{cachorroBean.cachorrosUsuario}" var="cachorro"
+		<p:fieldset legend="Relatorio de Livros">
+			<p:dataTable value="#{livroBean.livrosUsuario}" var="livro"
 				style="text-align:center" paginator="true" rows="3">
 				<p:column>
 					<f:facet name="header">Identificador</f:facet>
-					<h:outputText value="#{cachorro.id}" />
+					<h:outputText value="#{livro.id}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{cachorro.nome}" />
+					<h:outputText value="#{livro.nome}" />
 				</p:column>
 				<p:column>
-					<f:facet name="header">Raca</f:facet>
-					<h:outputText value="#{cachorro.raca.raca}" />
+					<f:facet name="header">Autor</f:facet>
+					<h:outputText value="#{livro.autor}" />
 				</p:column>
 				<p:column>
-					<f:facet name="header">Porte</f:facet>
-					<h:outputText value="#{cachorro.raca.porte.porte}" />
+					<f:facet name="header">Editora</f:facet>
+					<h:outputText value="#{livro.editora.nome}" />
 				</p:column>
 				<p:column>
-					<f:facet name="header">Data de Nascimento</f:facet>
-					<h:outputText value="#{cachorro.dataNascimento.time}">
+					<f:facet name="header">Data de Cadastro</f:facet>
+					<h:outputText value="#{livro.dataCadastro.time}">
 						<f:convertDateTime pattern="dd/MM/yyyy" />
 					</h:outputText>
 				</p:column>
 				<p:column>
-					<f:facet name="header">Sexo</f:facet>
-					<h:outputText value="#{cachorro.sexo}" />
+					<f:facet name="header">Categoria</f:facet>
+					<h:outputText value="#{livro.categoria.categoria}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Preco</f:facet>
+					<h:outputText value="#{livro.preco}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">Imagem</f:facet>
 					<p:graphicImage
-						value="/resources/img/cachorros/#{cachorro.raca.raca}.jpg" />
+						value="/resources/img/livros/#{livro.categoria.categoria}.png" />
 				</p:column>
 			</p:dataTable>
 		</p:fieldset>

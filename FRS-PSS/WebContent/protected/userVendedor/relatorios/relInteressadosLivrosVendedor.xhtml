@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatório de Interesses">
+			<h:form id="formPrincipal">
+				<p:dataTable var="recomendacao"
+					value="#{recomendacaoBean.recomendacoesUsuario}" id="tabelaDados"
+					paginator="true" paginatorAlwaysVisible="true" rows="5"
+					style="text-align:center">
+					<f:facet name="header">Recomendações Cadastradas</f:facet>
+
+					<p:column headerText="Data da Recomendacao">
+						<h:outputText value="#{recomendacao.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Data do Interesse">
+						<h:outputText value="#{recomendacao.interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="categoria de Interesse">
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
+						</h:outputText>
+					</p:column>
+
+					<!-- <p:dataTable var="Livro" value="#{recomendacao.livro}">
+						<p:column headerText="Nome do livro">
+							<h:outputText value="#{livro.nome}" />
+						</p:column>
+						<p:column headerText="Nome do dono">
+							<h:outputText value="#{cachorro.dono.nome}" />
+						</p:column>
+						<p:column headerText="Fone">
+							<h:outputText value="#{cachorro.dono.telefone}" />
+						</p:column>
+
+					</p:dataTable> -->
+
+					<p:column headerText="Status">
+						<h:outputText value="#{recomendacao.status}" />
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
+	</ui:define>
+</ui:composition>
+</html>
