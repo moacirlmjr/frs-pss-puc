@@ -29,11 +29,24 @@ public class InteresseBean {
 
 	private Interesse interesse;
 	private Categoria selectedCategoria;
+	private Integer interesseID;
+	
 
 	public InteresseBean() {
 		interesse = new Interesse();
 		selectedCategoria = new Categoria();
 	}
+
+	
+	public Integer getInteresseID() {
+		return interesseID;
+	}
+
+
+	public void setInteresseID(Integer interesseID) {
+		this.interesseID = interesseID;
+	}
+
 
 	public Interesse getInteresse() {
 		return interesse;
@@ -153,24 +166,28 @@ public class InteresseBean {
 	}
 
 	public void executarConfirmacao() {
+		Interesse i = this.interesse;
 		Calendar dataDeHoje = Calendar.getInstance();
 		RecomendacaoBean rb = new RecomendacaoBean();
 		Recomendacao rec = new Recomendacao();
-		rec.setInteresse(this.interesse);
+		rec.setInteresse(i);
 
 		Usuario u = LoginUtil.retornaUsuarioLogado();
 		LivroBean lb = new LivroBean();
 		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
 
 		for (Livro l : livrosUsuario) {
-			if (l.getCategoria().getCategoria() == this.interesse
-					.getCategoriaDeInteresse().getCategoria()) {
+			if (l.getCategoria().getCategoria() == this.interesse.getCategoriaDeInteresse().getCategoria()) {
 				rec.setLivro(l);
 				rec.setDataRegistro(dataDeHoje);
 				rb.gravar(rec);
-				this.interesse.setStatus(InteresseStatus.ATENDIDO);
+				tornarAtendido();
+				
 			}
 		}
+		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
+				+ this.interesse.getCategoriaDeInteresse().getCategoria()
+				+ " alterado para Atendido!");
 
 	}
 
