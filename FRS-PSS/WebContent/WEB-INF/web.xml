@@ -38,7 +38,7 @@
 	</filter-mapping>
 	<filter>
 		<filter-name>UserCompradorPagesFilter</filter-name>
-		<filter-class>br.com.frs.filter.UserReceptorPagesFilter</filter-class>
+		<filter-class>br.com.frs.filter.UserCompradorPagesFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>UserCompradorPagesFilter</filter-name>
