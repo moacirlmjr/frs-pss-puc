@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import br.com.frs.modelo.Usuario;
 
-public class UserReceptorPagesFilter extends AbstractFilter implements Filter {
+public class UserVendedorPagesFilter extends AbstractFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -29,7 +29,7 @@ public class UserReceptorPagesFilter extends AbstractFilter implements Filter {
 			
 		}
 
-		if((!user.isUserReceptor() && !user.isUserDoador())){
+		if((!user.isUserDoador() && !user.isUserReceptor())){
 			accessDenied(request, response, req);
 			throw new SecurityException();
 		}

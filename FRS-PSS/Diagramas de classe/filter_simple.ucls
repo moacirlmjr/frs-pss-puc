@@ -10,8 +10,8 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="br.com.frs.filter.UserDonorPagesFilter" project="FRS-PSS" 
-    file="/FRS-PSS/src/br/com/frs/filter/UserDonorPagesFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="br.com.frs.filter.UserVendedorPagesFilter" project="FRS-PSS" 
+    file="/FRS-PSS/src/br/com/frs/filter/UserVendedorPagesFilter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="469" y="204"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="false" package="false" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="br.com.frs.filter.UserReceptorPagesFilter" project="FRS-PSS" 
-    file="/FRS-PSS/src/br/com/frs/filter/UserReceptorPagesFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="br.com.frs.filter.UserCompradorPagesFilter" project="FRS-PSS" 
+    file="/FRS-PSS/src/br/com/frs/filter/UserCompradorPagesFilter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="667" y="204"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      

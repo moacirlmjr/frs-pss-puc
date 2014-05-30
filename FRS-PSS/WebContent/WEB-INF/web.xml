@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<display-name>frs</display-name>
+	<display-name>FRS</display-name>
 	<welcome-file-list>
 		<welcome-file>public/login.jsf</welcome-file>
 	</welcome-file-list>
@@ -29,19 +29,19 @@
 		<url-pattern>/protected/admin/*</url-pattern>
 	</filter-mapping>
 	<filter>
-		<filter-name>UserDonorPagesFilter</filter-name>
-		<filter-class>br.com.frs.filter.UserDonorPagesFilter</filter-class>
+		<filter-name>UserVendedorPagesFilter</filter-name>
+		<filter-class>br.com.frs.filter.UserVendedorPagesFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>UserDonorPagesFilter</filter-name>
+		<filter-name>UserVendedorPagesFilter</filter-name>
 		<url-pattern>/protected/userVendedor/*</url-pattern>
 	</filter-mapping>
 	<filter>
-		<filter-name>UserReceptorPagesFilter</filter-name>
+		<filter-name>UserCompradorPagesFilter</filter-name>
 		<filter-class>br.com.frs.filter.UserReceptorPagesFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>UserReceptorPagesFilter</filter-name>
+		<filter-name>UserCompradorPagesFilter</filter-name>
 		<url-pattern>/protected/userComprador/*</url-pattern>
 	</filter-mapping>
 	<error-page>
