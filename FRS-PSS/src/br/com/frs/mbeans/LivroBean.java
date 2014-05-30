@@ -66,8 +66,8 @@ public class LivroBean {
 		return livroID;
 	}
 
-	public void setLivroID(Integer racaID) {
-		this.livroID = racaID;
+	public void setLivroID(Integer livroID) {
+		this.livroID = livroID;
 	}
 
 	public List<Livro> getLivros() {

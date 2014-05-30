@@ -20,6 +20,16 @@ public class EditoraBean {
 	}
 
 		
+	public Editora getEditora() {
+		return editora;
+	}
+
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
+
+
 	public List<Editora> getEditoras() {
 		return new DAO<Editora>(Editora.class).listaTodos();
 	}

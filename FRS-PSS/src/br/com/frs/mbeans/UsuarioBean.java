@@ -52,18 +52,16 @@ public class UsuarioBean {
 
 	public List<Usuario> getUsuariosSemInteresse() {
 
-		ArrayList<Interesse> todosOsInteresse = (ArrayList<Interesse>) new DAO<Interesse>(
-				Interesse.class).listaTodos();
-		ArrayList<Usuario> todosOsUsuarios = (ArrayList<Usuario>) new DAO<Usuario>(
-				Usuario.class).listaTodos();
+		ArrayList<Interesse> todosOsInteresse = (ArrayList<Interesse>) new DAO<Interesse>(Interesse.class).listaTodos();
+		ArrayList<Usuario> todosOsUsuarios = (ArrayList<Usuario>) new DAO<Usuario>(Usuario.class).listaTodos();
 
-		ArrayList<Usuario> todosOsUsuariosReceptores = new ArrayList<Usuario>();
+		ArrayList<Usuario> todosOsUsuariosCompradores = new ArrayList<Usuario>();
 		ArrayList<Usuario> todosOsUsuariosSemInteresse = new ArrayList<Usuario>();
 		ArrayList<Usuario> todosOsUsuariosComInteresse = new ArrayList<Usuario>();
 		
 		for(Usuario u: todosOsUsuarios){
 			if(u.getRole().getId()==2){
-				todosOsUsuariosReceptores.add(u);
+				todosOsUsuariosCompradores.add(u);
 			}
 		}
 
@@ -71,8 +69,8 @@ public class UsuarioBean {
 			todosOsUsuariosComInteresse.add(i.getUsuario());
 		}
 
-		todosOsUsuariosReceptores.removeAll(todosOsUsuariosComInteresse);
-		todosOsUsuariosSemInteresse = todosOsUsuariosReceptores;
+		todosOsUsuariosCompradores.removeAll(todosOsUsuariosComInteresse);
+		todosOsUsuariosSemInteresse = todosOsUsuariosCompradores;
 
 		return todosOsUsuariosSemInteresse;
 	}
