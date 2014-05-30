@@ -17,6 +17,10 @@
 					value="#{recomendacaoBean.recomendacoes}" id="tabelaDados"
 					paginator="true" paginatorAlwaysVisible="true" rows="5">
 					<f:facet name="header">Recomendações Cadastradas</f:facet>
+					
+					<p:column headerText="Id">
+						<h:outputText value="#{recomendacao.id}" />
+					</p:column>
 
 					<p:column headerText="Data Recomendacao">
 						<h:outputText value="#{recomendacao.dataRegistro.time}">
@@ -34,21 +38,21 @@
 						<h:outputText value="#{recomendacao.interesse.usuario.nome}" />
 					</p:column>
 
-					<p:column headerText="Raca de Interesse">
+					<p:column headerText="Categoria de Interesse">
 						<h:outputText
-							value="#{recomendacao.interesse.racasDeInteresse.raca}" />
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}" />
 					</p:column>
 
-					<p:column headerText="Nome do cachorro">
-						<h:outputText value="#{recomendacao.cachorro.nome}" />
+					<p:column headerText="Nome do livro">
+						<h:outputText value="#{recomendacao.livro.nome}" />
 					</p:column>
 
 					<p:column headerText="Nome do dono">
-						<h:outputText value="#{recomendacao.cachorro.dono.nome}" />
+						<h:outputText value="#{recomendacao.livro.dono.nome}" />
 					</p:column>
 
 					<p:column headerText="Fone">
-						<h:outputText value="#{recomendacao.cachorro.dono.telefone}" />
+						<h:outputText value="#{recomendacao.livro.dono.telefone}" />
 					</p:column>
 
 					<p:column headerText="Status">

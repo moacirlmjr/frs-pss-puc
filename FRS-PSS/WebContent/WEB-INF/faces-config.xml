@@ -85,7 +85,7 @@
 		</navigation-case>
 
 		<navigation-case>
-			<from-outcome>relatorioRecomendacoes</from-outcome>
+			<from-outcome>relatorioRecomendacoesVendedor</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf</to-view-id>
 			<redirect />
 		</navigation-case>

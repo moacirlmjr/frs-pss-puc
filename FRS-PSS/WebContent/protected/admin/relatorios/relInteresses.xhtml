@@ -35,22 +35,18 @@
 					<p:column headerText="Telefone">
 						<h:outputText value="#{interesse.usuario.telefone}" />
 					</p:column>
+					
+					<p:column headerText="Raca">
+						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}" />
+					</p:column>
 
 					<p:column headerText="Status">
 						<h:outputText value="#{interesse.status}" />
 					</p:column>
 
-					<p:column headerText="Raca">
-						<h:outputText value="#{interesse.racasDeInteresse.raca}" />
-					</p:column>
-
-					<p:column headerText="Porte">
-						<h:outputText value="#{interesse.racasDeInteresse.porte.porte}" />
-					</p:column>
-
 					<p:column headerText="Imagem" style="width:25%">
 						<p:graphicImage
-							value="/resources/img/cachorros/#{interesse.racasDeInteresse.raca}.jpg" />
+							value="/resources/img/livros/#{interesse.categoriaDeInteresse.categoria}.png" />
 					</p:column>
 
 				</p:dataTable>
