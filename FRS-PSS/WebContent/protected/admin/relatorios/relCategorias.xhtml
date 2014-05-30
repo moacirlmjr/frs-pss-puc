@@ -11,23 +11,19 @@
 
 	<ui:define name="conteudo">
 
-		<p:fieldset legend="Relatorio de Racas">
-			<p:dataTable value="#{racaBean.racas}" var="raca" paginator="true"
+		<p:fieldset legend="Relatorio de Categorias">
+			<p:dataTable value="#{categoriaBean.categorias}" var="categoria" paginator="true"
 				style="text-align:center" rows="3">
 				<p:column>
 					<f:facet name="header">Id</f:facet>
-					<h:outputText value="#{raca.id}" />
+					<h:outputText value="#{categoria.id}" />
 				</p:column>
 				<p:column>
 					<f:facet name="header">Descrição</f:facet>
-					<h:outputText value="#{raca.raca}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Porte</f:facet>
-					<h:outputText value="#{raca.porte.porte}" />
+					<h:outputText value="#{categoria.categoria}" />
 				</p:column>
 				<p:column headerText="Imagem" style="width:25%">
-					<p:graphicImage value="/resources/img/cachorros/#{raca.raca}.jpg" />
+					<p:graphicImage value="/resources/img/livros/#{categoria.categoria}.png" />
 				</p:column>
 			</p:dataTable>
 		</p:fieldset>

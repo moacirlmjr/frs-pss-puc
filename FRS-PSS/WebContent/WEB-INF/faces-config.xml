@@ -71,25 +71,25 @@
 			<to-view-id>/protected/userVendedor/cadastros/livro.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>relatorioLivrosUsuario</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relLivrosUser.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>relatorioInteressesVendedor</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relInteressadosLivrosVendedor.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>relatorioRecomendacoes</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>dadosDoUsuarioDonor</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relDadosUser.jsf</to-view-id>
@@ -115,18 +115,18 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>relatorioRacas</from-outcome>
-			<to-view-id>/protected/admin/relatorios/relRacas.jsf</to-view-id>
+			<from-outcome>relatorioCategorias</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relCategorias.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>relatorioPortes</from-outcome>
-			<to-view-id>/protected/admin/relatorios/relPortes.jsf</to-view-id>
+			<from-outcome>relatorioEditoras</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relEditoras.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>relatorioCachorros</from-outcome>
-			<to-view-id>/protected/admin/relatorios/relCachorros.jsf</to-view-id>
+			<from-outcome>relatorioLivros</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relLivros.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>

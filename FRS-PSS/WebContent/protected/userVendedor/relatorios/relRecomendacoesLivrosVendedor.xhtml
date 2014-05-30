@@ -13,11 +13,11 @@
 
 		<p:fieldset legend="Relatório de Recomendações">
 			<h:form id="formPrincipal">
-				
+
 				<p:dataTable var="recomendacao"
-					value="#{recomendacaoBean.recomendacoesCompradorVendedor}" id="tabelaDados"
-					paginator="true" paginatorAlwaysVisible="true" rows="5"
-					style="text-align:center">
+					value="#{recomendacaoBean.recomendacoesCompradorVendedor}"
+					id="tabelaDados" paginator="true" paginatorAlwaysVisible="true"
+					rows="5" style="text-align:center">
 					<f:facet name="header">Recomendações Cadastradas</f:facet>
 
 					<p:column headerText="Data da Recomendacao">
@@ -37,29 +37,26 @@
 							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
 						</h:outputText>
 					</p:column>
-					
+
 					<p:column headerText="Nome do Interessado">
-						<h:outputText
-							value="#{recomendacao.interesse.usuario.nome}">
+						<h:outputText value="#{recomendacao.interesse.usuario.nome}">
 						</h:outputText>
 					</p:column>
-					
+
 					<p:column headerText="Email do Interessado">
-						<h:outputText
-							value="#{recomendacao.interesse.usuario.email}">
+						<h:outputText value="#{recomendacao.interesse.usuario.email}">
 						</h:outputText>
 					</p:column>
-					
+
 					<p:column headerText="Telefone do Interessado">
-						<h:outputText
-							value="#{recomendacao.interesse.usuario.telefone}">
+						<h:outputText value="#{recomendacao.interesse.usuario.telefone}">
 						</h:outputText>
 					</p:column>
 
 					<p:column headerText="Status">
 						<h:outputText value="#{recomendacao.status}" />
 					</p:column>
-					
+
 					<p:column headerText="Ações">
 						<p:commandLink title="Executar Recomendação"
 							action="#{recomendacaoBean.executarConfirmacao}" ajax="false">
@@ -69,7 +66,7 @@
 								value="#{recomendacao}" />
 						</p:commandLink>
 
-						
+
 					</p:column>
 
 				</p:dataTable>

@@ -11,16 +11,16 @@
 
 	<ui:define name="conteudo">
 
-		<p:fieldset legend="Relatorio de Portes">
-			<p:dataTable value="#{porteBean.portes}" var="porte" paginator="true"
+		<p:fieldset legend="Relatorio de Editoras">
+			<p:dataTable value="#{editoraBean.editoras}" var="editora" paginator="true"
 				rows="7" style="text-align:center">
 				<p:column>
 					<f:facet name="header">Identificador</f:facet>
-					<h:outputText value="#{porte.id}" />
+					<h:outputText value="#{editora.id}" />
 				</p:column>
 				<p:column>
-					<f:facet name="header">Descrição</f:facet>
-					<h:outputText value="#{porte.porte}" />
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{editora.nome}" />
 				</p:column>
 			</p:dataTable>
 		</p:fieldset>

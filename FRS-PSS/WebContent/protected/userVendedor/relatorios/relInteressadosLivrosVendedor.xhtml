@@ -29,7 +29,7 @@
 						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}">
 						</h:outputText>
 					</p:column>
-					
+
 
 					<p:column headerText="Nome do Interessado">
 						<h:outputText value="#{interesse.usuario.nome}">
@@ -49,18 +49,17 @@
 					<p:column headerText="Status">
 						<h:outputText value="#{interesse.status}" />
 					</p:column>
-					
+
 					<p:column headerText="Ações">
 						<p:commandLink title="Executar Recomendação"
 							action="#{interesseBean.executarConfirmacao}" ajax="false">
 							<p:graphicImage library="img" name="ok_icon.png" />
-							<f:setPropertyActionListener
-								target="#{interesseBean.interesse}"
+							<f:setPropertyActionListener target="#{interesseBean.interesse}"
 								value="#{interesse}" />
 						</p:commandLink>
-						
+
 					</p:column>
-					
+
 
 				</p:dataTable>
 			</h:form>
