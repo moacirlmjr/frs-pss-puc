@@ -15,6 +15,7 @@ public class IniciarAgentes {
 	
 	private static AgenteAnalisadorUsuario aau = new AgenteAnalisadorUsuario();
 	private static AgenteAnalisadorInteresses aai = new AgenteAnalisadorInteresses();
+	private static AgenteDeEnvioDeEmails aem = new AgenteDeEnvioDeEmails();
 
 	public IniciarAgentes() {	
 		
@@ -53,7 +54,11 @@ public class IniciarAgentes {
 		
 		new IniciarAgentes(aau, "AgenteAnalisadorUsuario", "poiContainer");
 		new IniciarAgentes(aai, "AgenteAnalisadorInteresse", "poiContainer");
+		new IniciarAgentes(aem, "AgenteDeEnvioDeEmails", "poiContainer");
+
 	}
+	
+	
 	
 
 }
