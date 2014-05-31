@@ -10,8 +10,8 @@ import org.apache.commons.mail.EmailException;
 
 import br.com.frs.agents.IniciarAgentes;
 import br.com.frs.dao.DAO;
-import br.com.frs.modelo.Livro;
 import br.com.frs.modelo.Interesse;
+import br.com.frs.modelo.Livro;
 import br.com.frs.modelo.Recomendacao;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.modelo.enumerator.InteresseStatus;
@@ -258,6 +258,13 @@ public class RecomendacaoBean {
 		
 
 	}
+	
+	public void iniciarAgentes(){
+		System.out.println("Iniciando os Agentes");		
+		IniciarAgentes.init();
+		System.out.println("Agentes Criados");		
+	}
+	
 	
 	
 	
