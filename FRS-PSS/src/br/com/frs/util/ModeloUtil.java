@@ -242,10 +242,17 @@ public class ModeloUtil {
 		Interesse i1 = new Interesse(roberto, erotico);
 		Interesse i2 = new Interesse(roberto, informatica);
 		Interesse i3 = new Interesse(roberto, autoAjuda);
+		Interesse i4 = new Interesse(danyllo, erotico);
+		Interesse i5 = new Interesse(danyllo, informatica);
+		Interesse i6 = new Interesse(danyllo, autoAjuda);
 
+		
 		interesses.add(i1);
 		interesses.add(i2);
 		interesses.add(i3);
+		interesses.add(i4);
+		interesses.add(i5);
+		interesses.add(i6);
 
 		Recomendacao r1 = new Recomendacao(i1, l6);
 		Recomendacao r2 = new Recomendacao(i2, l7);
