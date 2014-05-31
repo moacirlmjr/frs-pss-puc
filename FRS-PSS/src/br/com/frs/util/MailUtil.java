@@ -81,7 +81,7 @@ public class MailUtil {
 					+ user.getNome()
 					+ "\n"
 					+ "Informamos que seu iteresse na categoria " +  interesse.getCategoriaDeInteresse().getCategoria()
-					+ " foi cadastrado com sucesso em nassa base de dados!"
+					+ " foi cadastrado com sucesso em nossa base de dados!"
 					+ "\n" + 
 					"Em breve estaremos enviando algumas sugestões com base na sua preferência." 
 					+ "\n" +
