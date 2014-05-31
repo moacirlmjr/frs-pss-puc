@@ -37,7 +37,7 @@ public class MailUtil {
 			email.setMsg("OlÃ¡, senhor "
 					+ user.getNome()
 					+ "\n"
-					+ "Seja muito bem vindo ao Sharing Dog!!!"
+					+ "Seja muito bem vindo ao FRS!!!"
 					+ "\n" + 
 					"Será uma grande satisfação sugerir alguns de nossos livros." 
 					+ "\n" +
@@ -75,7 +75,7 @@ public class MailUtil {
 			email.setMsg("Olá, senhor "
 					+ user.getNome()
 					+ "\n"
-					+ "Informamos que seu iteresse em " +  interesse.getCategoriaDeInteresse().getCategoria()
+					+ "Informamos que seu iteresse na categoria " +  interesse.getCategoriaDeInteresse().getCategoria()
 					+ " foi cadastrado com sucesso em nassa base de dados!"
 					+ "\n" + 
 					"Em breve estaremos enviando algumas sugestões com base na sua preferência." 
@@ -106,7 +106,7 @@ public class MailUtil {
 			email.setSSL(true);
 			email.addTo(user.getEmail()); 															
 			email.setFrom(MailUtil.MAIL_USER); 
-			email.setSubject("Recomendação de animal" + " - " + MailUtil.MAIL_OWNER);
+			email.setSubject("Recomendação de livro" + " - " + MailUtil.MAIL_OWNER);
 			email.setMsg("Olá, senhor "
 					+ user.getNome()
 					+ "\n"
@@ -156,7 +156,7 @@ public class MailUtil {
 			email.setMsg("Olá, senhor "
 					+ user.getNome()
 					+ "\n"
-					+ "Estou interesado em seu cachorro: " 
+					+ "Estou interesado em seu Livro: " 
 					+ "\n" + 
 					"Nome: " + rec.getLivro().getNome() 
 					+ "\n" + 

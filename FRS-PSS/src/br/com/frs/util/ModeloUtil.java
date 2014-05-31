@@ -45,7 +45,7 @@ public class ModeloUtil {
 				"danyllo_wagner@hotmail.com", "79009677", "@DanylloWagner",
 				Sexo.Masculino, "danyllo", "danyllo123", roleUserComprador);
 		Usuario maroca = new Usuario("Maria Trigo", "maria@hotmail.com",
-				"80339677", "@AneliseCid", Sexo.Feminino, "maria", "maria123",
+				"80339677", "@Maria Trigo", Sexo.Feminino, "mariaT", "mariaT123",
 				roleUserComprador);
 		Usuario roberto = new Usuario("Roberto Felicio",
 				"prof.roberto.posse@hotmail.com", "81214567",

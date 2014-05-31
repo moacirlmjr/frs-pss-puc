@@ -259,11 +259,6 @@ public class RecomendacaoBean {
 
 	}
 	
-	public void iniciarAgentes(){
-		System.out.println("Iniciando os Agentes");		
-		IniciarAgentes.init();
-		System.out.println("Agentes Criados");		
-	}
 	
 	
 }
