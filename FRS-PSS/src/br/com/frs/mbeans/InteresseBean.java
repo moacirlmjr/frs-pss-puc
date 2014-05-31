@@ -1,7 +1,6 @@
 package br.com.frs.mbeans;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +14,6 @@ import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Categoria;
 import br.com.frs.modelo.Interesse;
 import br.com.frs.modelo.Livro;
-import br.com.frs.modelo.Recomendacao;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.modelo.enumerator.InteresseStatus;
 import br.com.frs.util.CalendarUtil;
@@ -165,28 +163,23 @@ public class InteresseBean {
 
 	}
 
-	public void executarConfirmacao() {
-		Interesse i = this.interesse;
-		Calendar dataDeHoje = Calendar.getInstance();
-		RecomendacaoBean rb = new RecomendacaoBean();
-		Recomendacao rec = new Recomendacao();
-		rec.setInteresse(i);
-
+	public void enviarEmailComprador() {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
 		LivroBean lb = new LivroBean();
 		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
 
 		for (Livro l : livrosUsuario) {
 			if (l.getCategoria().getCategoria() == this.interesse.getCategoriaDeInteresse().getCategoria()) {
-				rec.setLivro(l);
-				rec.setDataRegistro(dataDeHoje);
-				rb.gravar(rec);
-				tornarAtendido();
-				
+				try {
+					MailUtil.enviaEmailRecomendacaoVendedorParaComprador(this.interesse, l);
+				} catch (EmailException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
 			}
 		}
 		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
-				+ this.interesse.getCategoriaDeInteresse().getCategoria()
+		+ this.interesse.getCategoriaDeInteresse().getCategoria()
 				+ " alterado para Atendido!");
 
 	}

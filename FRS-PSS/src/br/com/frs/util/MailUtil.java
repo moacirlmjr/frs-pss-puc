@@ -6,6 +6,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
 import br.com.frs.modelo.Interesse;
+import br.com.frs.modelo.Livro;
 import br.com.frs.modelo.Recomendacao;
 import br.com.frs.modelo.Usuario;
 
@@ -175,6 +176,57 @@ public class MailUtil {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	
+	
+	@SuppressWarnings("deprecation")
+	public static void enviaEmailRecomendacaoVendedorParaComprador(Interesse in, Livro liv) throws EmailException {
+
+		SimpleEmail email = new SimpleEmail();
+
+		try {
+			@SuppressWarnings("unused")
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			Usuario user = in.getUsuario();
+			email.setDebug(true);
+			email.setHostName("smtp.gmail.com");
+			email.setAuthentication(MailUtil.ACOOUNT_USER, MailUtil.MAIL_PWD);
+			email.setSSL(true);
+			email.addTo(user.getEmail()); 															
+			email.setFrom(MailUtil.MAIL_USER); 
+			email.setSubject("Recomendação de livro" + " - " + MailUtil.MAIL_OWNER);
+			email.setMsg("Olá, senhor "
+					+ user.getNome()
+					+ "\n"
+					+ "Eu possuo um livro que pode ser do seu interesse! " 
+					+ "\n" + 
+					"Categoria: " + liv.getCategoria()
+					+ "\n" + 
+					"Livro: " + liv.getNome()
+					+ "\n" + 
+					  "\n" + 		
+					"Abaixo segue os meus dados: "
+					+ "\n" + 
+					"Nome: " + liv.getDono().getNome() 
+					+ "\n" +
+					"Telefone: " + liv.getDono().getTelefone() 
+					+ "\n" +
+					"Email: " +  liv.getDono().getEmail()
+					+ "\n \n" +
+					"Gostou do Livro? entre em contato com o dono para os acertos finais!!!"
+					+ "\n" +
+					"Qualquer dúvida, sugestão ou reclamação, entre em contato conosco."
+					+ "\n" +
+					"Até Breve!");
+			email.send();
+
+		} catch (EmailException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	
+	
 	
 	
 	@SuppressWarnings("deprecation")

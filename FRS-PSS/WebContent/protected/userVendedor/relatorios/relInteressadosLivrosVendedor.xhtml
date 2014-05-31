@@ -51,8 +51,8 @@
 					</p:column>
 
 					<p:column headerText="Ações">
-						<p:commandLink title="Executar Recomendação"
-							action="#{interesseBean.executarConfirmacao}" ajax="false">
+						<p:commandLink title="Enviar Email ao Comprador"
+							action="#{interesseBean.enviarEmailComprador}" ajax="false">
 							<p:graphicImage library="img" name="ok_icon.png" />
 							<f:setPropertyActionListener target="#{interesseBean.interesse}"
 								value="#{interesse}" />
