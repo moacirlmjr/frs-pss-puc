@@ -58,6 +58,13 @@ public class IniciarAgentes {
 
 	}
 	
+	public static void init2(){
+		System.out.println("Inicializando agentes...");
+		Boot.main(new String[]{"-gui"});
+		new IniciarAgentes(aem, "AgenteDeEnvioDeEmails", "poiContainer");
+
+	}
+	
 	
 	
 

@@ -265,6 +265,12 @@ public class RecomendacaoBean {
 		System.out.println("Agentes Criados");		
 	}
 	
+	public void iniciarAgenteDeEmail(){
+		System.out.println("Iniciando os Agentes de EMAIL");		
+		IniciarAgentes.init2();
+		System.out.println("Agentes Criados");		
+	}
+	
 	
 	
 	
