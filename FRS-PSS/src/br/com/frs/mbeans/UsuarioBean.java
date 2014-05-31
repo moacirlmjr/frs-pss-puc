@@ -90,7 +90,7 @@ public class UsuarioBean {
 		ArrayList<Interesse> todosOsInteressesComRecomendacao = new ArrayList<Interesse>();
 
 		for (Usuario u : todosOsUsuarios) {
-			if (u.getRole().getId() == 1) {
+			if (u.getRole().getId() == 2) {
 				todosOsUsuariosReceptores.add(u);
 			}
 		}
