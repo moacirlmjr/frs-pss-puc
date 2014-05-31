@@ -95,6 +95,40 @@ public class MailUtil {
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
+	public static void enviaEmailusuarioSemInteresse(Usuario u) throws EmailException {
+
+		SimpleEmail email = new SimpleEmail();
+
+		try {
+			@SuppressWarnings("unused")
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			email.setDebug(true);
+			email.setHostName("smtp.gmail.com");
+			email.setAuthentication(MailUtil.ACOOUNT_USER, MailUtil.MAIL_PWD);
+			email.setSSL(true);
+			email.addTo(u.getEmail()); 															
+			email.setFrom(MailUtil.MAIL_USER); 
+			email.setSubject("Não Vimos nenhum Interesse" + " - " + MailUtil.MAIL_OWNER);
+			email.setMsg("Olá, senhor "
+					+ u.getNome()
+					+ "\n"
+					+ "Verificamos que seu cadastro foi realizado com sucesso!!!" 
+					+ "\n" + 
+					"Contudo até agora não verificamos nenhum cadastro de interesse!!!" 
+					+ "\n" +
+					"Qualquer dúvida, sugestão ou reclamação, entre em contato conosco."
+					+ "\n" +
+					"Até Breve!");
+			email.send();
+
+		} catch (EmailException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+
+	
 	
 	@SuppressWarnings("deprecation")
 	public static void enviaEmailRecomendacao(Recomendacao rec) throws EmailException {
