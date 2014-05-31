@@ -12,11 +12,16 @@ import br.com.frs.modelo.Usuario;
 
 
 public class MailUtil {
-	
-	private static final String ACOOUNT_USER = "FRS";
+	 
+	/*private static final String ACOOUNT_USER = "frspuc";
 	private static final String MAIL_USER = "frspuc@mail.com";
-	private static final String MAIL_PWD = "freerspuc";
-	private static final String MAIL_OWNER = "frspuc";
+	private static final String MAIL_PWD = "pucfrs";
+	private static final String MAIL_OWNER = "FRS";*/
+	
+	private static final String ACOOUNT_USER = "sharingdog";
+    private static final String MAIL_USER = "sharingdog@gmail.com";
+    private static final String MAIL_PWD = "pucsharingdog";
+    private static final String MAIL_OWNER = "SharingDog";
 
 	@SuppressWarnings("deprecation")
 	public static void enviaEmailBoasVindas(Usuario user) throws EmailException {
