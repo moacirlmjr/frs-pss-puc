@@ -8,7 +8,6 @@ import javax.faces.bean.RequestScoped;
 
 import org.apache.commons.mail.EmailException;
 
-import br.com.frs.agents.IniciarAgentes;
 import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Interesse;
 import br.com.frs.modelo.Livro;
@@ -81,14 +80,14 @@ public class RecomendacaoBean {
 		System.out.println("Entreeeeeeeeeeeeei: " + auxNovo.size());
 		return auxNovo;
 	}
-	
-	
+
 	public List<Recomendacao> getRecomendacoesCompradorVendedor() {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
-		//LivroBean livroBean = new LivroBean();
-		//List<Livro> livrosVendedor = livroBean.getLivrosUsuario(u);
-		
-		ArrayList<Recomendacao> todasRec = (ArrayList<Recomendacao>) new DAO<Recomendacao>(Recomendacao.class).listaTodos();
+		// LivroBean livroBean = new LivroBean();
+		// List<Livro> livrosVendedor = livroBean.getLivrosUsuario(u);
+
+		ArrayList<Recomendacao> todasRec = (ArrayList<Recomendacao>) new DAO<Recomendacao>(
+				Recomendacao.class).listaTodos();
 		ArrayList<Recomendacao> recVendedor = new ArrayList<Recomendacao>();
 		for (Recomendacao r : todasRec) {
 			if (r.getLivro().getDono().equals(u)) {
@@ -134,8 +133,7 @@ public class RecomendacaoBean {
 	public void gravar() {
 		Interesse inte = new DAO<Interesse>(Interesse.class)
 				.buscaPorId(this.interesseID);
-		Livro livro = new DAO<Livro>(Livro.class)
-				.buscaPorId(this.livroID);
+		Livro livro = new DAO<Livro>(Livro.class).buscaPorId(this.livroID);
 		this.recomendacao.setInteresse(inte);
 		this.recomendacao.setDataRegistro(CalendarUtil.retornaDiaDeHoje());
 		this.recomendacao.setLivro(livro);
@@ -185,7 +183,6 @@ public class RecomendacaoBean {
 				+ this.recomendacao.getLivro().getNome()
 				+ " excluido com sucesso!");
 	}
-	
 
 	public void executarConfirmacao() {
 		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
@@ -198,7 +195,8 @@ public class RecomendacaoBean {
 		InteresseBean ib = new InteresseBean();
 		LivroBean cb = new LivroBean();
 		ArrayList<Interesse> intUser = new ArrayList<Interesse>();
-		ArrayList<Interesse> allInt = (ArrayList<Interesse>) ib.getInteressesAtivos();
+		ArrayList<Interesse> allInt = (ArrayList<Interesse>) ib
+				.getInteressesAtivos();
 		ArrayList<Livro> livros = (ArrayList<Livro>) cb.getLivros();
 
 		for (Interesse i : allInt) {
@@ -209,7 +207,8 @@ public class RecomendacaoBean {
 
 		for (Livro c : livros) {
 			for (Interesse i : intUser) {
-				if ((c.getCategoria()).equals(i.getCategoriaDeInteresse().getCategoria())) {
+				if ((c.getCategoria()).equals(i.getCategoriaDeInteresse()
+						.getCategoria())) {
 					Recomendacao rec = new Recomendacao();
 					i.setStatus(InteresseStatus.ATENDIDO);
 					new DAO<Interesse>(Interesse.class).atualiza(i);
@@ -229,14 +228,14 @@ public class RecomendacaoBean {
 		ArrayList<Livro> livros = (ArrayList<Livro>) cb.getLivros();
 		ArrayList<Livro> livrosRec = new ArrayList<Livro>();
 
-
 		for (Livro l : livros) {
-			if (l.getCategoria().getId()==(i.getCategoriaDeInteresse().getId())) {
+			if (l.getCategoria().getId() == (i.getCategoriaDeInteresse()
+					.getId())) {
 				livrosRec.add(l);
 			}
 		}
-		
-		for(Livro l: livrosRec){
+
+		for (Livro l : livrosRec) {
 			Recomendacao rec = new Recomendacao();
 			rec.setLivro(l);
 			rec.setDataRegistro(CalendarUtil.retornaDiaDeHoje());
@@ -252,26 +251,9 @@ public class RecomendacaoBean {
 				e.printStackTrace();
 			}
 			rec = null;
-			
+
 		}
-		
-		
 
 	}
-	
-	public void iniciarAgentes(){
-		System.out.println("Iniciando os Agentes");		
-		IniciarAgentes.init();
-		System.out.println("Agentes Criados");		
-	}
-	
-	public void iniciarAgenteDeEmail(){
-		System.out.println("Iniciando os Agentes de EMAIL");		
-		IniciarAgentes.init2();
-		System.out.println("Agentes Criados");		
-	}
-	
-	
-	
-	
+
 }
