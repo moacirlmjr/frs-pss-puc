@@ -8,19 +8,18 @@ import br.com.frs.mbeans.UsuarioBean;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.util.MailUtil;
 
-
-
-
-public class EnviaEmailUsuarioSemInteresseEstrategia  implements Estrategia {
+public class EnviaEmailUsuarioSemInteresseEstrategia implements Estrategia {
 
 	@Override
 	public void execute() {
-		
-		System.out.println("Enviando Email para usuários sem interesse cadastrado");
+
+		System.out
+				.println("Enviando Email para usuários sem interesse cadastrado");
 		UsuarioBean ub = new UsuarioBean();
-		ArrayList<Usuario> usuariosSI = (ArrayList<Usuario>) ub.getUsuariosSemInteresse();
-		
-		for (Usuario u : usuariosSI){
+		ArrayList<Usuario> usuariosSI = (ArrayList<Usuario>) ub
+				.getUsuariosSemInteresse();
+
+		for (Usuario u : usuariosSI) {
 			try {
 				MailUtil.enviaEmailusuarioSemInteresse(u);
 			} catch (EmailException e) {
@@ -28,7 +27,6 @@ public class EnviaEmailUsuarioSemInteresseEstrategia  implements Estrategia {
 				e.printStackTrace();
 			}
 		}
-		
-			
+
 	}
 }
