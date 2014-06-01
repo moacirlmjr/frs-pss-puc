@@ -14,15 +14,15 @@ import br.com.frs.modelo.Usuario;
 
 public class MailUtil {
 	 
-	private static final String ACOOUNT_USER = "frspuc";
+	/*private static final String ACOOUNT_USER = "frspuc";
 	private static final String MAIL_USER = "frspuc@mail.com";
 	private static final String MAIL_PWD = "pucfrs";
-	private static final String MAIL_OWNER = "frspuc";
+	private static final String MAIL_OWNER = "frspuc";*/
 	
-	/*private static final String ACOOUNT_USER = "sharingdog";
+	private static final String ACOOUNT_USER = "sharingdog";
     private static final String MAIL_USER = "sharingdog@gmail.com";
     private static final String MAIL_PWD = "pucsharingdog";
-    private static final String MAIL_OWNER = "SharingDog";*/
+    private static final String MAIL_OWNER = "SharingDog";
 
 	@SuppressWarnings("deprecation")
 	public static void enviaEmailBoasVindas(Usuario user) throws EmailException {
@@ -200,11 +200,14 @@ public class MailUtil {
 					+ "\n"
 					+ "Eu possuo um livro que pode ser do seu interesse! " 
 					+ "\n" + 
-					"Categoria: " + liv.getCategoria()
-					+ "\n" + 
 					"Livro: " + liv.getNome()
 					+ "\n" + 
-					  "\n" + 		
+					"Categoria: " + liv.getCategoria().getCategoria()
+					+ "\n" + 
+					"Editora: " + liv.getEditora()					
+					+ "\n" + 
+					"Observacao: " + liv.getObservacao()					
+					+ "\n" + 						
 					"Abaixo segue os meus dados: "
 					+ "\n" + 
 					"Nome: " + liv.getDono().getNome() 
@@ -213,11 +216,11 @@ public class MailUtil {
 					+ "\n" +
 					"Email: " +  liv.getDono().getEmail()
 					+ "\n \n" +
-					"Gostou do Livro? entre em contato com o dono para os acertos finais!!!"
+					"Gostou do Livro? entre em comigo para os acertos finais!!!"
 					+ "\n" +
-					"Qualquer dúvida, sugestão ou reclamação, entre em contato conosco."
+					"Qualquer dúvida, retorne o email!"
 					+ "\n" +
-					"Até Breve!");
+					"Aguardo retorno!");
 			email.send();
 
 		} catch (EmailException e) {

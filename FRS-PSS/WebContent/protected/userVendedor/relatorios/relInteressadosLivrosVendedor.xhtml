@@ -10,6 +10,8 @@
 <ui:composition template="../_template.xhtml">
 
 	<ui:define name="conteudo">
+		<p:messages autoUpdate="true" />
+		<p:growl autoUpdate="true" />
 
 		<p:fieldset legend="Relatório de Possíveis Interessados">
 			<h:form id="formPrincipal">
@@ -17,7 +19,7 @@
 					value="#{interesseBean.interessesVendedor}" id="tabelaDados"
 					paginator="true" paginatorAlwaysVisible="true" rows="5"
 					style="text-align:center">
-					<f:facet name="header">Interesses Cadastrados</f:facet>
+					<f:facet name="header">Usuários Interessados</f:facet>
 
 					<p:column headerText="Data do Interesse">
 						<h:outputText value="#{interesse.dataRegistro.time}">

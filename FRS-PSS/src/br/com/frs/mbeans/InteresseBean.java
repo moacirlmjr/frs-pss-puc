@@ -129,6 +129,11 @@ public class InteresseBean {
 				+ this.interesse.getCategoriaDeInteresse().getCategoria()
 				+ " gravado com sucesso!");
 	}
+	
+	public void atualizar(InteresseStatus status){
+		this.interesse.setStatus(status);
+		new DAO<Interesse>(Interesse.class).atualiza(this.interesse); 
+	}
 
 	public void tornarInativo() {
 		this.interesse.setStatus(InteresseStatus.INATIVO);
@@ -167,9 +172,15 @@ public class InteresseBean {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
 		LivroBean lb = new LivroBean();
 		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
+		System.out.println("Entreiiii aqui!");
 
 		for (Livro l : livrosUsuario) {
-			if (l.getCategoria().getCategoria() == this.interesse.getCategoriaDeInteresse().getCategoria()) {
+			System.out.println("Dentro do for!");
+			System.out.println("1 - " + l.getCategoria().getCategoria());
+			System.out.println("2 - " + this.interesse.getCategoriaDeInteresse().getCategoria());
+
+			if (l.getCategoria().getCategoria().equalsIgnoreCase(this.interesse.getCategoriaDeInteresse().getCategoria())) {
+				System.out.println("Entreiiii no iffff!");
 				try {
 					MailUtil.enviaEmailRecomendacaoVendedorParaComprador(this.interesse, l);
 				} catch (EmailException e) {
@@ -178,9 +189,9 @@ public class InteresseBean {
 				}				
 			}
 		}
+		atualizar(InteresseStatus.EMAIL_VENDEDOR);
 		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
-		+ this.interesse.getCategoriaDeInteresse().getCategoria()
-				+ " alterado para Atendido!");
+		+ this.interesse.getCategoriaDeInteresse().getCategoria() + " alterado para EMAIL_VENDEDOR!");
 
 	}
 
