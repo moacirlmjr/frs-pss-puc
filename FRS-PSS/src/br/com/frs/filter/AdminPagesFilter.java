@@ -22,14 +22,15 @@ public class AdminPagesFilter extends AbstractFilter implements Filter {
 	}
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		Usuario user = (Usuario) req.getSession(true).getAttribute("usuario");
-		
-		if (user == null){
+
+		if (user == null) {
 			accessDenied(request, response, req);
-			throw new SecurityException();	
-			
+			throw new SecurityException();
+
 		}
 
 		if (!user.isAdmin()) {
