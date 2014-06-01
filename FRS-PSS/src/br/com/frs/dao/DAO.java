@@ -9,7 +9,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
-
 public class DAO<T> {
 
 	private final Class<T> classe;
@@ -34,7 +33,7 @@ public class DAO<T> {
 
 		// fecha a entity manager
 		em.close();
-		
+
 		return a;
 	}
 
@@ -152,7 +151,7 @@ public class DAO<T> {
 
 		return result;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<T> findListResults(String namedQuery) {
 		List<T> result = null;
@@ -171,7 +170,7 @@ public class DAO<T> {
 
 		return result;
 	}
-	
+
 	public Integer findSingleResult(String namedQuery) {
 		Integer result = null;
 		EntityManager em = new HibernateUtil().getEntityManager();
