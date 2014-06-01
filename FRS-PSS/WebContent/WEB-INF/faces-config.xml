@@ -91,7 +91,7 @@
 		</navigation-case>
 
 		<navigation-case>
-			<from-outcome>dadosDoUsuarioDonor</from-outcome>
+			<from-outcome>dadosDoUsuarioVendedor</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relDadosUser.jsf</to-view-id>
 			<redirect />
 		</navigation-case>

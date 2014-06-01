@@ -2,13 +2,11 @@ package br.com.frs.mbeans;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.util.JSFMessageUtil;
@@ -73,10 +71,10 @@ public class LoginBean {
 				return "relatorioUsuarios";
 			}
 			else if (user.isUserReceptor()){
-				return "dadosDoUsuarioReceptor";				
+				return "dadosDoUsuarioComprador";				
 			}
 			else if (user.isUserDoador()){
-				return "dadosDoUsuarioDonor";
+				return "dadosDoUsuarioVendedor";
 			}		
 		}
 
