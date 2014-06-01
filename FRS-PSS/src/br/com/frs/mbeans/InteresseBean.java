@@ -191,7 +191,7 @@ public class InteresseBean {
 		}
 		atualizar(InteresseStatus.EMAIL_VENDEDOR);
 		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
-		+ this.interesse.getCategoriaDeInteresse().getCategoria() + " alterado para EMAIL_VENDEDOR!");
+		+ this.interesse.getCategoriaDeInteresse().getCategoria() + "do usuario" + this.interesse.getUsuario().getNome() + " foi alterado para EMAIL_VENDEDOR!");
 
 	}
 
