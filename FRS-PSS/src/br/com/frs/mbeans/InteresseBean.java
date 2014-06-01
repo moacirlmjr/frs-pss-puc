@@ -182,6 +182,9 @@ public class InteresseBean {
 			if (l.getCategoria().getCategoria().equalsIgnoreCase(this.interesse.getCategoriaDeInteresse().getCategoria())) {
 				System.out.println("Entreiiii no iffff!");
 				try {
+					atualizar(InteresseStatus.EMAIL_VENDEDOR);
+					JSFMessageUtil.sendInfoMessageToUser("Interesse em "
+							+ this.interesse.getCategoriaDeInteresse().getCategoria() + "do usuario" + this.interesse.getUsuario().getNome() + " foi alterado para EMAIL_VENDEDOR!");
 					MailUtil.enviaEmailRecomendacaoVendedorParaComprador(this.interesse, l);
 				} catch (EmailException e) {
 					// TODO Auto-generated catch block
@@ -189,9 +192,6 @@ public class InteresseBean {
 				}				
 			}
 		}
-		atualizar(InteresseStatus.EMAIL_VENDEDOR);
-		JSFMessageUtil.sendInfoMessageToUser("Interesse em "
-		+ this.interesse.getCategoriaDeInteresse().getCategoria() + "do usuario" + this.interesse.getUsuario().getNome() + " foi alterado para EMAIL_VENDEDOR!");
 
 	}
 
