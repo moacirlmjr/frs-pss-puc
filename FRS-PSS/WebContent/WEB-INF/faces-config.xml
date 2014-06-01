@@ -48,18 +48,18 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>dadosDoUsuarioReceptor</from-outcome>
+			<from-outcome>dadosDoUsuarioComprador</from-outcome>
 			<to-view-id>/protected/userComprador/relatorios/relDadosUser.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>relInteresses</from-outcome>
+			<from-outcome>relInteressesComprador</from-outcome>
 			<to-view-id>/protected/userComprador/relatorios/relInteresses.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>relRecomendacoes</from-outcome>
-			<to-view-id>/protected/userComprador/relatorios/relRecomendacoesReceptor.jsf</to-view-id>
+			<from-outcome>relRecomendacoesComprador</from-outcome>
+			<to-view-id>/protected/userComprador/relatorios/relRecomendacoesComprador.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 
