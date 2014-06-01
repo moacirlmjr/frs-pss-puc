@@ -156,7 +156,7 @@ public class RecomendacaoBean {
 			e.printStackTrace();
 		}
 		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro"
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro"
 				+ this.recomendacao.getLivro().getNome()
 				+ " alterado para Confirmada!");
 	}
@@ -164,7 +164,7 @@ public class RecomendacaoBean {
 	public void tornarInativa() {
 		this.recomendacao.setStatus(RecomendacaoStatus.INATIVA);
 		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
 				+ " alterado para Inativa!");
 	}
@@ -172,21 +172,21 @@ public class RecomendacaoBean {
 	public void tornarAtiva() {
 		this.recomendacao.setStatus(RecomendacaoStatus.ATIVA);
 		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
 				+ " alterado para Ativada!");
 	}
 
 	public void excluir() {
 		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
 				+ " excluido com sucesso!");
 	}
 
 	public void executarConfirmacao() {
 		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao cachorro "
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
 				+ " excluido com sucesso!");
 	}

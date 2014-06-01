@@ -117,8 +117,8 @@ public class LivroBean {
 		this.livro.setDono(doador);
 		this.livro.setEditora(ed);
 		this.livro.setCategoria(cat);
-		System.out.println("adicionando o cachorro" + this.livro.getNome()
-				+ "do doador" + this.livro.getDono().getNome());
+		System.out.println("adicionando o livro" + this.livro.getNome()
+				+ "do vendedor" + this.livro.getDono().getNome());
 		new DAO<Livro>(Livro.class).adiciona(livro);
 		JSFMessageUtil.sendInfoMessageToUser(this.livro.getNome()
 				+ " adicionado com sucesso!!!");
