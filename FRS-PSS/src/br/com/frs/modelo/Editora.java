@@ -6,8 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import br.com.frs.modelo.interfaces.Generic;
+
 @Entity
-public class Editora implements Generic{
+public class Editora implements Generic {
 
 	/**
 	 * 
@@ -25,8 +26,8 @@ public class Editora implements Generic{
 		this.id = id;
 		this.nome = nome;
 	}
-	
-	public Editora( String nome) {
+
+	public Editora(String nome) {
 		super();
 		this.nome = nome;
 	}

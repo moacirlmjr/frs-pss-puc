@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import javax.faces.model.ListDataModel;
 import org.primefaces.model.SelectableDataModel;
 
-public class CategoriaDataModel extends ListDataModel<Categoria> implements SelectableDataModel<Categoria> {
+public class CategoriaDataModel extends ListDataModel<Categoria> implements
+		SelectableDataModel<Categoria> {
 
 	public CategoriaDataModel() {
 	}

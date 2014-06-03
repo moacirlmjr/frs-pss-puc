@@ -10,7 +10,7 @@ import br.com.frs.modelo.interfaces.Categorizable;
 import br.com.frs.modelo.interfaces.Generic;
 
 @Entity
-@NamedQuery(name = "Categoria.findAllCategoriasOrdenadas", query = "select p from Categoria p order by categoria asc") 
+@NamedQuery(name = "Categoria.findAllCategoriasOrdenadas", query = "select p from Categoria p order by categoria asc")
 public class Categoria implements Generic, Categorizable {
 
 	private static final long serialVersionUID = 1L;
