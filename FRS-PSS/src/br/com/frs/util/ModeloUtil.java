@@ -1,7 +1,6 @@
 package br.com.frs.util;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import br.com.frs.modelo.Categoria;
 import br.com.frs.modelo.Editora;
@@ -41,15 +40,19 @@ public class ModeloUtil {
 		Usuario userD = new Usuario("Usuario Vendedor", "doador@frs.com",
 				"77665544", "@DoadorFRS", Sexo.Masculino, "userV", "userV123",
 				roleUserVendedor);
-		Usuario danyllo = new Usuario("Danyllo Wagner",
-				"danyllo_wagner@hotmail.com", "79009677", "@DanylloWagner",
+
+		Usuario gilsantos = new Usuario("Gil Santos Oliveira",
+				"givanilde.santos@hotmail.com", "79004554", "@GilSantosPosse",
 				Sexo.Masculino, "danyllo", "danyllo123", roleUserComprador);
-		Usuario maroca = new Usuario("Maria Trigo", "maria@hotmail.com",
-				"80339677", "@Maria Trigo", Sexo.Feminino, "mariaT", "mariaT123",
-				roleUserComprador);
 		Usuario roberto = new Usuario("Roberto Felicio",
 				"prof.roberto.posse@hotmail.com", "81214567",
 				"@Roberto_Felicio", Sexo.Masculino, "roberto", "roberto123",
+				roleUserComprador);
+		Usuario danyllo = new Usuario("Danyllo Wagner",
+				"danyllo_wagner@hotmail.com", "79009677", "@DanylloWagner",
+				Sexo.Masculino, "danyllo", "danyllo123", roleUserComprador);
+		Usuario joana = new Usuario("Joana Trigo", "maria@hotmail.com",
+				"80339677", "@Joana_Trigo", Sexo.Feminino, "joana", "joana123",
 				roleUserComprador);
 		Usuario maria = new Usuario("Maria Joaquina",
 				"maria_joaquina@gmail.com", "99887766", "@Maria-Joaquina",
@@ -57,6 +60,30 @@ public class ModeloUtil {
 		Usuario joao = new Usuario("Joao Santos", "joaozito@gmail.com",
 				"88776655", "@JoaozitoJP", Sexo.Masculino, "joao", "joao123",
 				roleUserComprador);
+		Usuario rose = new Usuario("Rose Oliveira", "roseoliveira@hotmail.com",
+				"18181818", "@Rose1980", Sexo.Feminino, "rose", "rose123",
+				roleUserComprador);
+		Usuario clarisse = new Usuario("Clarisse Oliveira",
+				"claholiveira@hotmail.com", "98765432", "@ClaAracatuba",
+				Sexo.Feminino, "clarisse", "clarisse123", roleUserComprador);
+		Usuario marcelo = new Usuario("Marcelo Ravena", "marcelo@gmail.com",
+				"62345986", "@MarcelaoDasMeninas", Sexo.Masculino, "marcelo",
+				"marcelo123", roleUserComprador);
+		Usuario cleonice = new Usuario("Cleonice de Assis",
+				"cleonice@gmail.com", "56382910", "@CleoPosse", Sexo.Feminino,
+				"cleonice", "cleonice123", roleUserComprador);
+		Usuario geovane = new Usuario("Geovane do Santos", "geovane@gmail.com",
+				"91238345", "@GeovanePosse", Sexo.Masculino, "geovane",
+				"geovane123", roleUserComprador);
+		Usuario antonio = new Usuario("Antonio Bento", "ab@gmail.com",
+				"76293756", "@TonhaoBento", Sexo.Masculino, "geovane",
+				"geovane123", roleUserComprador);
+		Usuario jaciara = new Usuario("Jaciara Macumbeira",
+				"geovane@gmail.com", "91238345", "@GeovanePosse",
+				Sexo.Feminino, "jaciara", "jaciara123", roleUserComprador);
+		Usuario marco = new Usuario("Marco Pollo", "marco_polloe@gmail.com",
+				"91238345", "@Marco_PolloBR", Sexo.Masculino, "marco",
+				"marco123", roleUserComprador);
 
 		Usuario roberta = new Usuario("Roberta Albuquerque",
 				"betabahia@gmail.com", "98765432", "@BetinhaBA", Sexo.Feminino,
@@ -82,9 +109,9 @@ public class ModeloUtil {
 		Usuario virginia = new Usuario("Maria Virginia", "vininha@hotmail.com",
 				"33310100", "@Vininha85", Sexo.Feminino, "virginia",
 				"virginia123", roleUserVendedor);
-		Usuario antonio = new Usuario("Antonio Carlos", "acarloscid@uol.com",
-				"32478110", "@ACarlosCID", Sexo.Masculino, "antonio",
-				"antonio123", roleUserVendedor);
+		Usuario carlos = new Usuario("Carlos finoquio", "acarloscid@uol.com",
+				"32478110", "@ACarlos", Sexo.Masculino, "carlos", "carlos123",
+				roleUserVendedor);
 		Usuario mauro = new Usuario("Mauro Cesar", "maurinho2000@uol.com",
 				"33294532", "@MaurinhoSurf", Sexo.Masculino, "mauro",
 				"mauro123", roleUserVendedor);
@@ -140,9 +167,20 @@ public class ModeloUtil {
 		usuarios.add(admin);
 		usuarios.add(userR);
 		usuarios.add(userD);
-		usuarios.add(danyllo);
-		usuarios.add(maroca);
+
+		usuarios.add(gilsantos);
 		usuarios.add(roberto);
+		usuarios.add(danyllo);
+		usuarios.add(joana);
+		usuarios.add(rose);
+		usuarios.add(clarisse);
+		usuarios.add(marcelo);
+		usuarios.add(cleonice);
+		usuarios.add(geovane);
+		usuarios.add(antonio);
+		usuarios.add(jaciara);
+		usuarios.add(marco);
+
 		usuarios.add(maria);
 		usuarios.add(joao);
 		usuarios.add(roberta);
@@ -153,7 +191,7 @@ public class ModeloUtil {
 		usuarios.add(jairo);
 		usuarios.add(josefa);
 		usuarios.add(virginia);
-		usuarios.add(antonio);
+		usuarios.add(carlos);
 		usuarios.add(mauro);
 		usuarios.add(emanuele);
 		usuarios.add(rodrigo);
@@ -181,6 +219,17 @@ public class ModeloUtil {
 		Categoria adolescente = new Categoria("Adolescente");
 		Categoria erotico = new Categoria("erotico");
 		Categoria informatica = new Categoria("informatica");
+		Categoria administracao = new Categoria("administracao");
+		Categoria historia = new Categoria("historia");
+		Categoria medicina = new Categoria("medicina");
+		Categoria veterinaria = new Categoria("veterinaria");
+		Categoria geografia = new Categoria("geografia");
+		Categoria ciencias = new Categoria("ciencias");
+		Categoria matematica = new Categoria("matematica");
+		Categoria biologia = new Categoria("biologia");
+		Categoria contabilidade = new Categoria("contabilidade");
+		Categoria quimica = new Categoria("quimica");
+		Categoria fisica = new Categoria("fisica");
 
 		categorias.add(romance);
 		categorias.add(autoAjuda);
@@ -191,42 +240,104 @@ public class ModeloUtil {
 		categorias.add(adolescente);
 		categorias.add(erotico);
 		categorias.add(informatica);
+		categorias.add(administracao);
+		categorias.add(historia);
+		categorias.add(medicina);
+		categorias.add(veterinaria);
+		categorias.add(geografia);
+		categorias.add(ciencias);
+		categorias.add(matematica);
+		categorias.add(biologia);
+		categorias.add(contabilidade);
+		categorias.add(quimica);
+		categorias.add(fisica);
 
 		Editora moderna = new Editora("Moderna");
 		Editora milLuas = new Editora("Mil Luas");
 		Editora Elsevier = new Editora("Elsevier");
 		Editora Rtc = new Editora("RTC");
+		Editora campus = new Editora("Campus");
+		Editora wesley = new Editora("Wesley");
+		Editora scipione = new Editora("Scipione");
+		Editora ftd = new Editora("FTD");
+		Editora puc = new Editora("PUC-Rio");
+		Editora globo = new Editora("Globo");
 
 		editoras.add(moderna);
 		editoras.add(Elsevier);
 		editoras.add(milLuas);
 		editoras.add(Rtc);
-
-		Calendar dataDeHoje = Calendar.getInstance();
+		editoras.add(campus);
+		editoras.add(wesley);
+		editoras.add(scipione);
+		editoras.add(ftd);
+		editoras.add(puc);
+		editoras.add(globo);
 
 		Livro l1 = new Livro("Amor eterno", "Robert Garcia", 35.00, romance,
-				roberta, dataDeHoje, "Livro pouco usado!!!", moderna);
+				roberta, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
 		Livro l2 = new Livro("Para sempre ao teu lado", "Marco Mansur", 63.00,
-				romance, marcos, dataDeHoje, "Imperdível", milLuas);
+				romance, marcos, CalendarUtil.getDataRandomica(), "Imperdível", milLuas);
 		Livro l3 = new Livro("Vem pro meu lado", "Antonio Bragança", 12.00,
-				romance, patricia, dataDeHoje, "Bom livro de cabeceira",
+				romance, patricia, CalendarUtil.getDataRandomica(), "Bom livro de cabeceira",
 				moderna);
 		Livro l4 = new Livro("Deus é maior", "Padre Ibiapina", 11.00,
-				autoAjuda, edson, dataDeHoje, "Receba essa benção meu irmão",
+				autoAjuda, edson, CalendarUtil.getDataRandomica(), "Receba essa benção meu irmão",
 				milLuas);
 		Livro l5 = new Livro("Espirito de Luz", "Joaquim Nesta", 15.00,
-				autoAjuda, dorgival, dataDeHoje, "promoção", moderna);
+				autoAjuda, dorgival, CalendarUtil.getDataRandomica(), "promoção", moderna);
 		Livro l6 = new Livro("Sexo selvagem", "Madalena Sourret", 19.00,
-				erotico, jairo, dataDeHoje, "Livro pouco usado!!!", moderna);
+				erotico, jairo, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
 		Livro l7 = new Livro("Redes de Computadores", "Andrew Tanenbaun",
-				87.00, informatica, josefa, dataDeHoje,
+				87.00, informatica, josefa, CalendarUtil.getDataRandomica(),
 				"Melhor livro de redes de computadores", Elsevier);
 		Livro l8 = new Livro("Amor eterno", "Robert Garcia", 35.00, terror,
-				virginia, dataDeHoje, "Livro pouco usado!!!", moderna);
+				virginia, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
 		Livro l9 = new Livro("Amor eterno", "Robert Garcia", 35.00, infantil,
-				antonio, dataDeHoje, "Livro pouco usado!!!", moderna);
+				antonio, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
 		Livro l10 = new Livro("Amor eterno", "Robert Garcia", 35.00,
-				adolescente, mauro, dataDeHoje, "Livro pouco usado!!!", moderna);
+				adolescente, mauro, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!",
+				moderna);
+		Livro l11 = new Livro("Matematica Geral", "Bonjornoe  Giovani", 115.00,
+				matematica, emanuele, CalendarUtil.getDataRandomica(),
+				"Excelente livro de matematica!!!", scipione);
+		Livro l12 = new Livro("Contabilidade Fácil", "Jorge Sabrini", 78.00,
+				contabilidade, rodrigo, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
+		Livro l13 = new Livro("Os Seres Vivos", "Marjoli Stein", 78.00,
+				contabilidade, monique, CalendarUtil.getDataRandomica(),
+				"Livro usado no ensino médio!!!", ftd);
+		Livro l14 = new Livro("Fisica Quantica", "Souto Maior", 65.00,
+				contabilidade, gabriela, CalendarUtil.getDataRandomica(),
+				"Livro para pós-graduação", moderna);
+		Livro l15 = new Livro("Qumica orgânical", "Maria Saquarema", 91.00,
+				quimica, elizabet, CalendarUtil.getDataRandomica(),
+				"Esta com pequenas avarias...", scipione);
+		Livro l16 = new Livro("Game Of Thrones I", "Hamiflier ForWaves", 34.00,
+				adolescente, felipe, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
+		Livro l17 = new Livro("Historia Moderna", "Jorge Vicentini", 78.00,
+				historia, luis, CalendarUtil.getDataRandomica(),
+				"Melhor livro de historia para ensino medio", campus);
+		Livro l18 = new Livro("Fisica Quantica", "Souto Maior", 65.00,
+				contabilidade, gabriela, CalendarUtil.getDataRandomica(),
+				"Livro para pós-graduação", moderna);
+		Livro l19 = new Livro("Caras e Bocas", "Carlos Drummond", 91.00,
+				adolescente, larissa, CalendarUtil.getDataRandomica(),
+				"Inspirado na melhor novela da globo", globo);
+		Livro l20 = new Livro("O Livro das Ciências", "Jorge Michaels", 67.00,
+				ciencias, mauricio, CalendarUtil.getDataRandomica(),
+				"Livro de exoterismoe ciencias ocultas", moderna);
+		Livro l21 = new Livro("Veterinaria Geral - Grande porte",
+				"Alexsandra firmino", 123.00, veterinaria, aliandro,
+				CalendarUtil.getDataRandomica(),
+				"Abrange desde caprinos até bovinos e equinos", wesley);
+		Livro l22 = new Livro("Administração - A biblia", "Chiaventto", 65.00,
+				administracao, felipe, CalendarUtil.getDataRandomica(),
+				"Bom livro sobre os conceitos de administração", wesley);
+		Livro l23 = new Livro("Sistemas Operacionais", "Deitel", 65.00,
+				informatica, jairo, CalendarUtil.getDataRandomica(),
+				"Muito simple o entendimento desse livro", wesley);
 
 		livros.add(l1);
 		livros.add(l2);
@@ -238,6 +349,19 @@ public class ModeloUtil {
 		livros.add(l8);
 		livros.add(l9);
 		livros.add(l10);
+		livros.add(l11);
+		livros.add(l12);
+		livros.add(l13);
+		livros.add(l14);
+		livros.add(l15);
+		livros.add(l16);
+		livros.add(l17);
+		livros.add(l18);
+		livros.add(l19);
+		livros.add(l20);
+		livros.add(l21);
+		livros.add(l22);
+		livros.add(l23);
 
 		Interesse i1 = new Interesse(roberto, erotico);
 		Interesse i2 = new Interesse(roberto, informatica);
@@ -245,22 +369,45 @@ public class ModeloUtil {
 		Interesse i4 = new Interesse(danyllo, erotico);
 		Interesse i5 = new Interesse(danyllo, informatica);
 		Interesse i6 = new Interesse(danyllo, autoAjuda);
+		Interesse i7 = new Interesse(gilsantos, administracao);
+		Interesse i8 = new Interesse(gilsantos, informatica);
+		Interesse i9 = new Interesse(gilsantos, romance);
+		Interesse i10 = new Interesse(rose, autoAjuda);
+		Interesse i11 = new Interesse(rose, erotico);
+		Interesse i12 = new Interesse(rose, romance);
+		Interesse i13 = new Interesse(clarisse, autoAjuda);
+		Interesse i14 = new Interesse(rose, ciencias);
+		Interesse i15 = new Interesse(rose, quimica);
 
-		
 		interesses.add(i1);
 		interesses.add(i2);
 		interesses.add(i3);
 		interesses.add(i4);
 		interesses.add(i5);
 		interesses.add(i6);
+		interesses.add(i7);
+		interesses.add(i8);
+		interesses.add(i9);
+		interesses.add(i10);
+		interesses.add(i11);
+		interesses.add(i12);
+		interesses.add(i13);
+		interesses.add(i14);
+		interesses.add(i15);
 
 		Recomendacao r1 = new Recomendacao(i1, l6);
 		Recomendacao r2 = new Recomendacao(i2, l7);
 		Recomendacao r3 = new Recomendacao(i3, l4);
+		Recomendacao r4 = new Recomendacao(i7, l22);
+		Recomendacao r5 = new Recomendacao(i8, l23);
+		Recomendacao r6 = new Recomendacao(i9, l2);
 
 		recomendacoes.add(r1);
 		recomendacoes.add(r2);
 		recomendacoes.add(r3);
+		recomendacoes.add(r4);
+		recomendacoes.add(r5);
+		recomendacoes.add(r6);
 
 	}
 

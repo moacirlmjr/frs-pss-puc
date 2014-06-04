@@ -29,7 +29,6 @@ public class Categoria implements Generic, Categorizable {
 
 	public Categoria() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getId() {
