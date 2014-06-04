@@ -275,29 +275,35 @@ public class ModeloUtil {
 		editoras.add(globo);
 
 		Livro l1 = new Livro("Amor eterno", "Robert Garcia", 35.00, romance,
-				roberta, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
+				roberta, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
 		Livro l2 = new Livro("Para sempre ao teu lado", "Marco Mansur", 63.00,
-				romance, marcos, CalendarUtil.getDataRandomica(), "Imperdível", milLuas);
-		Livro l3 = new Livro("Vem pro meu lado", "Antonio Bragança", 12.00,
-				romance, patricia, CalendarUtil.getDataRandomica(), "Bom livro de cabeceira",
-				moderna);
-		Livro l4 = new Livro("Deus é maior", "Padre Ibiapina", 11.00,
-				autoAjuda, edson, CalendarUtil.getDataRandomica(), "Receba essa benção meu irmão",
+				romance, marcos, CalendarUtil.getDataRandomica(), "Imperdível",
 				milLuas);
+		Livro l3 = new Livro("Vem pro meu lado", "Antonio Bragança", 12.00,
+				romance, patricia, CalendarUtil.getDataRandomica(),
+				"Bom livro de cabeceira", moderna);
+		Livro l4 = new Livro("Deus é maior", "Padre Ibiapina", 11.00,
+				autoAjuda, edson, CalendarUtil.getDataRandomica(),
+				"Receba essa benção meu irmão", milLuas);
 		Livro l5 = new Livro("Espirito de Luz", "Joaquim Nesta", 15.00,
-				autoAjuda, dorgival, CalendarUtil.getDataRandomica(), "promoção", moderna);
+				autoAjuda, dorgival, CalendarUtil.getDataRandomica(),
+				"promoção", moderna);
 		Livro l6 = new Livro("Sexo selvagem", "Madalena Sourret", 19.00,
-				erotico, jairo, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
+				erotico, jairo, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
 		Livro l7 = new Livro("Redes de Computadores", "Andrew Tanenbaun",
 				87.00, informatica, josefa, CalendarUtil.getDataRandomica(),
 				"Melhor livro de redes de computadores", Elsevier);
 		Livro l8 = new Livro("Amor eterno", "Robert Garcia", 35.00, terror,
-				virginia, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
+				virginia, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
 		Livro l9 = new Livro("Amor eterno", "Robert Garcia", 35.00, infantil,
-				antonio, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!", moderna);
+				antonio, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
 		Livro l10 = new Livro("Amor eterno", "Robert Garcia", 35.00,
-				adolescente, mauro, CalendarUtil.getDataRandomica(), "Livro pouco usado!!!",
-				moderna);
+				adolescente, mauro, CalendarUtil.getDataRandomica(),
+				"Livro pouco usado!!!", moderna);
 		Livro l11 = new Livro("Matematica Geral", "Bonjornoe  Giovani", 115.00,
 				matematica, emanuele, CalendarUtil.getDataRandomica(),
 				"Excelente livro de matematica!!!", scipione);
