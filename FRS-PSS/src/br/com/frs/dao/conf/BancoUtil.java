@@ -60,7 +60,7 @@ public class BancoUtil {
 		}
 		em.getTransaction().commit();
 
-		// criando recomendacao
+		// criando recomendações
 		em.getTransaction().begin();
 		for (Recomendacao r : ModeloUtil.recomendacoes) {
 			em.persist(r);
