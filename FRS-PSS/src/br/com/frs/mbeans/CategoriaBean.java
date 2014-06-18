@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 import br.com.frs.dao.DAO;
 import br.com.frs.modelo.Categoria;
@@ -54,7 +55,7 @@ public class CategoriaBean {
 
 	public void gravar() {
 		System.out.println("Gravando Categoria " + this.categoria.getCategoria());
-		new DAO<Categoria>(Categoria.class).adiciona(categoria);
+		new DAO<Categoria>(Categoria.class).adiciona(this.categoria);
 		JSFMessageUtil.sendInfoMessageToUser("Categoria cadastrado com sucesso!!!");
 	}
 

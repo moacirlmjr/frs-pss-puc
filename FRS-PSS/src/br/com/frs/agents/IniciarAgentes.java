@@ -13,7 +13,7 @@ public class IniciarAgentes {
 
 	private static AgenteAnalisadorUsuario aau = new AgenteAnalisadorUsuario();
 	private static AgenteAnalisadorInteresses aai = new AgenteAnalisadorInteresses();
-	private static AgenteDeEnvioDeEmails aem = new AgenteDeEnvioDeEmails();
+	private static AgenteAnalisadorDeUsuariosSemInteresse aausi = new AgenteAnalisadorDeUsuariosSemInteresse();
 
 	public IniciarAgentes() {
 
@@ -30,7 +30,6 @@ public class IniciarAgentes {
 			String nameContainer) {
 
 		Runtime runtime = Runtime.instance();
-
 		Profile profile = new ProfileImpl();
 		profile.setParameter(Profile.CONTAINER_NAME, nameContainer);
 
@@ -49,21 +48,27 @@ public class IniciarAgentes {
 		}
 	}
 
-	public static void init() {
+	
+	public static void initAgentUsuarioSI() {
 		System.out.println("Inicializando agentes...");
 		Boot.main(new String[] { "-gui" });
+		new IniciarAgentes(aausi, "AgenteAnalisadorDeUsuariosSemInteresse", "poiContainer");
 
-		new IniciarAgentes(aau, "AgenteAnalisadorUsuario", "poiContainer");
+	}
+	
+	public static void initAgentInteresse() {
+		System.out.println("Inicializando agentes...");
+		Boot.main(new String[] { "-gui" });
 		new IniciarAgentes(aai, "AgenteAnalisadorInteresse", "poiContainer");
-		new IniciarAgentes(aem, "AgenteDeEnvioDeEmails", "poiContainer");
 
 	}
-
-	public static void init2() {
+	
+	public static void initAgentUsuario() {
 		System.out.println("Inicializando agentes...");
 		Boot.main(new String[] { "-gui" });
-		new IniciarAgentes(aem, "AgenteDeEnvioDeEmails", "poiContainer");
+		new IniciarAgentes(aau, "AgenteAnalisadorInteresse", "poiContainer");
 
 	}
+
 
 }

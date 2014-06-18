@@ -8,7 +8,7 @@ import br.com.frs.mbeans.UsuarioBean;
 import br.com.frs.modelo.Usuario;
 import br.com.frs.util.MailUtil;
 
-public class EnviaEmailUsuarioSemInteresseEstrategia implements Estrategia {
+public class RecomendaVendedorBaseadoNaCategoriaEstrategia implements Estrategia {
 
 	@Override
 	public void execute() {

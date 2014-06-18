@@ -8,7 +8,6 @@
 
 <ui:composition template="../_template.xhtml">
 
-cachorro
 	<ui:define name="conteudo">
 		<h:form id="categoria">
 			<p:messages autoUpdate="true" />
@@ -19,7 +18,7 @@ cachorro
 				<p:panelGrid columns="2">
 					<h:outputLabel value="Categoria: " for="categoria" />
 					<p:inputText id="categoria"
-						value="#{CategoriaBean.categoria.categoria}" required="true"
+						value="#{categoriaBean.categoria.categoria}" required="true"
 						requiredMessage="Categoria Obrigatório"
 						title="Digite aqui um novo porte!">
 						<f:validateLength minimum="1" maximun="20" />

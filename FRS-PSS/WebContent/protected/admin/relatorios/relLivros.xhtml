@@ -12,47 +12,66 @@
 	<ui:define name="conteudo">
 
 		<p:fieldset legend="Relatorio de Livros">
-			<p:dataTable value="#{livroBean.livros}" var="livro"
-				paginator="true" rows="7" style="text-align:center">
-				<p:column>
-					<f:facet name="header">Id</f:facet>
-					<h:outputText value="#{livro.id}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{livro.nome}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Autor</f:facet>
-					<h:outputText value="#{livro.autor}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Editora</f:facet>
-					<h:outputText value="#{livro.editora.nome}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Categoria</f:facet>
-					<h:outputText value="#{livro.categoria.categoria}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Data de cadastro</f:facet>
-					<h:outputText value="#{livro.dataCadastro.time}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:outputText>
-				</p:column>
-				<p:column>
-					<f:facet name="header">Preco</f:facet>
-					<h:outputText value="#{livro.preco}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Dono</f:facet>
-					<h:outputText value="#{livro.dono.nome}" />
-				</p:column>
-				<p:column>
-					<f:facet name="header">Observação</f:facet>
-					<h:outputText value="#{livro.observacao}" />
-				</p:column>
-			</p:dataTable>
+			<h:form>
+				<p:dataTable value="#{livroBean.livros}" var="livro" id="tabelaLivros"
+					paginator="true" rows="7" style="text-align:center">
+					<p:column>
+						<f:facet name="header">Id</f:facet>
+						<h:outputText value="#{livro.id}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{livro.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Autor</f:facet>
+						<h:outputText value="#{livro.autor}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Editora</f:facet>
+						<h:outputText value="#{livro.editora.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Categoria</f:facet>
+						<h:outputText value="#{livro.categoria.categoria}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Data de cadastro</f:facet>
+						<h:outputText value="#{livro.dataCadastro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Preco</f:facet>
+						<h:outputText value="#{livro.preco}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Dono</f:facet>
+						<h:outputText value="#{livro.dono.nome}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Observação</f:facet>
+						<h:outputText value="#{livro.observacao}" />
+					</p:column>
+				</p:dataTable>
+				<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaLivros"
+						fileName="livros" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaLivros"
+						fileName="livros" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaLivros"
+						fileName="livros" />
+				</h:commandLink>
+			</h:form>
 		</p:fieldset>
 	</ui:define>
 

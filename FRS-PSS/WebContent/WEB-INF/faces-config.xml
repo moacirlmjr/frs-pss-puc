@@ -89,6 +89,11 @@
 			<to-view-id>/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioRecomendacoesVendedorExecutadas</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relRecomendacoesExecutadas.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>dadosDoUsuarioVendedor</from-outcome>

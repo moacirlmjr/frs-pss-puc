@@ -11,16 +11,16 @@
 
 	<ui:define name="conteudo">
 
-		<p:fieldset legend="Relatório de Recomendações">
+		<p:fieldset legend="Relatório de Recomendações Executadas">
 			<h:form id="formPrincipal">
 			<p:messages autoUpdate="true" />
 			<p:growl autoUpdate="true" />
 
 				<p:dataTable var="recomendacao"
-					value="#{recomendacaoBean.recomendacoesCompradorVendedor}"
+					value="#{recomendacaoBean.recomendacoesVendedorExecutadas}"
 					id="tabelaDados" paginator="true" paginatorAlwaysVisible="true"
 					rows="5" style="text-align:center">
-					<f:facet name="header">Recomendações Cadastradas</f:facet>
+					<f:facet name="header">Recomendações Executadas Cadastradas</f:facet>
 
 					<p:column headerText="Data da Recomendacao">
 						<h:outputText value="#{recomendacao.dataRegistro.time}">
@@ -60,9 +60,16 @@
 					</p:column>
 
 					<p:column headerText="Ações">
-						<p:commandLink title="Executar Recomendação"
-							action="#{recomendacaoBean.executarConfirmacao}" ajax="false">
-							<p:graphicImage library="img" name="ok_icon.png" />
+						<p:commandLink title="Desfazer Recomendação"
+							action="#{recomendacaoBean.desfazerConfirmacao}" ajax="false">
+							<p:graphicImage library="img" name="edit_icon.png" />
+							<f:setPropertyActionListener
+								target="#{recomendacaoBean.recomendacao}"
+								value="#{recomendacao}" />
+						</p:commandLink>
+						<p:commandLink title="Excluir Recomendação"
+							action="#{recomendacaoBean.excluir}" ajax="false">
+							<p:graphicImage library="img" name="delete_icon.png" />
 							<f:setPropertyActionListener
 								target="#{recomendacaoBean.recomendacao}"
 								value="#{recomendacao}" />

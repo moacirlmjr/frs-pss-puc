@@ -1,6 +1,7 @@
 package br.com.frs.util;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import br.com.frs.modelo.Categoria;
 import br.com.frs.modelo.Editora;
@@ -22,6 +23,8 @@ public class ModeloUtil {
 	public static ArrayList<Recomendacao> recomendacoes = new ArrayList<Recomendacao>();
 
 	static {
+		
+		Calendar dataHoje = Calendar.getInstance();
 
 		Role roleAdmin = new Role("Admin");
 		Role roleUserVendedor = new Role("UsuarioVendedor");
@@ -43,7 +46,7 @@ public class ModeloUtil {
 
 		Usuario gilsantos = new Usuario("Gil Santos Oliveira",
 				"givanilde.santos@hotmail.com", "79004554", "@GilSantosPosse",
-				Sexo.Masculino, "danyllo", "danyllo123", roleUserComprador);
+				Sexo.Masculino, "gil", "gil123", roleUserComprador);
 		Usuario roberto = new Usuario("Roberto Felicio",
 				"prof.roberto.posse@hotmail.com", "81214567",
 				"@Roberto_Felicio", Sexo.Masculino, "roberto", "roberto123",
@@ -275,74 +278,74 @@ public class ModeloUtil {
 		editoras.add(globo);
 
 		Livro l1 = new Livro("Amor eterno", "Robert Garcia", 35.00, romance,
-				roberta, CalendarUtil.getDataRandomica(),
+				roberta, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l2 = new Livro("Para sempre ao teu lado", "Marco Mansur", 63.00,
-				romance, marcos, CalendarUtil.getDataRandomica(), "Imperdível",
+				romance, marcos, dataHoje, "Imperdível",
 				milLuas);
 		Livro l3 = new Livro("Vem pro meu lado", "Antonio Bragança", 12.00,
-				romance, patricia, CalendarUtil.getDataRandomica(),
+				romance, patricia, dataHoje,
 				"Bom livro de cabeceira", moderna);
 		Livro l4 = new Livro("Deus é maior", "Padre Ibiapina", 11.00,
-				autoAjuda, edson, CalendarUtil.getDataRandomica(),
+				autoAjuda, edson, dataHoje,
 				"Receba essa benção meu irmão", milLuas);
 		Livro l5 = new Livro("Espirito de Luz", "Joaquim Nesta", 15.00,
-				autoAjuda, dorgival, CalendarUtil.getDataRandomica(),
+				autoAjuda, dorgival, dataHoje,
 				"promoção", moderna);
 		Livro l6 = new Livro("Sexo selvagem", "Madalena Sourret", 19.00,
-				erotico, jairo, CalendarUtil.getDataRandomica(),
+				erotico, jairo, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l7 = new Livro("Redes de Computadores", "Andrew Tanenbaun",
-				87.00, informatica, josefa, CalendarUtil.getDataRandomica(),
+				87.00, informatica, josefa, dataHoje,
 				"Melhor livro de redes de computadores", Elsevier);
 		Livro l8 = new Livro("Amor eterno", "Robert Garcia", 35.00, terror,
-				virginia, CalendarUtil.getDataRandomica(),
+				virginia, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l9 = new Livro("Amor eterno", "Robert Garcia", 35.00, infantil,
-				antonio, CalendarUtil.getDataRandomica(),
+				antonio, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l10 = new Livro("Amor eterno", "Robert Garcia", 35.00,
-				adolescente, mauro, CalendarUtil.getDataRandomica(),
+				adolescente, mauro, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l11 = new Livro("Matematica Geral", "Bonjornoe  Giovani", 115.00,
-				matematica, emanuele, CalendarUtil.getDataRandomica(),
+				matematica, emanuele, dataHoje,
 				"Excelente livro de matematica!!!", scipione);
 		Livro l12 = new Livro("Contabilidade Fácil", "Jorge Sabrini", 78.00,
-				contabilidade, rodrigo, CalendarUtil.getDataRandomica(),
+				contabilidade, rodrigo, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l13 = new Livro("Os Seres Vivos", "Marjoli Stein", 78.00,
-				contabilidade, monique, CalendarUtil.getDataRandomica(),
+				contabilidade, monique, dataHoje,
 				"Livro usado no ensino médio!!!", ftd);
 		Livro l14 = new Livro("Fisica Quantica", "Souto Maior", 65.00,
-				contabilidade, gabriela, CalendarUtil.getDataRandomica(),
+				contabilidade, gabriela, dataHoje,
 				"Livro para pós-graduação", moderna);
 		Livro l15 = new Livro("Qumica orgânical", "Maria Saquarema", 91.00,
-				quimica, elizabet, CalendarUtil.getDataRandomica(),
+				quimica, elizabet, dataHoje,
 				"Esta com pequenas avarias...", scipione);
 		Livro l16 = new Livro("Game Of Thrones I", "Hamiflier ForWaves", 34.00,
-				adolescente, felipe, CalendarUtil.getDataRandomica(),
+				adolescente, felipe, dataHoje,
 				"Livro pouco usado!!!", moderna);
 		Livro l17 = new Livro("Historia Moderna", "Jorge Vicentini", 78.00,
-				historia, luis, CalendarUtil.getDataRandomica(),
+				historia, luis, dataHoje,
 				"Melhor livro de historia para ensino medio", campus);
 		Livro l18 = new Livro("Fisica Quantica", "Souto Maior", 65.00,
-				contabilidade, gabriela, CalendarUtil.getDataRandomica(),
+				contabilidade, gabriela, dataHoje,
 				"Livro para pós-graduação", moderna);
 		Livro l19 = new Livro("Caras e Bocas", "Carlos Drummond", 91.00,
-				adolescente, larissa, CalendarUtil.getDataRandomica(),
+				adolescente, larissa, dataHoje,
 				"Inspirado na melhor novela da globo", globo);
 		Livro l20 = new Livro("O Livro das Ciências", "Jorge Michaels", 67.00,
-				ciencias, mauricio, CalendarUtil.getDataRandomica(),
+				ciencias, mauricio, dataHoje,
 				"Livro de exoterismoe ciencias ocultas", moderna);
 		Livro l21 = new Livro("Veterinaria Geral - Grande porte",
 				"Alexsandra firmino", 123.00, veterinaria, aliandro,
-				CalendarUtil.getDataRandomica(),
+				dataHoje,
 				"Abrange desde caprinos até bovinos e equinos", wesley);
 		Livro l22 = new Livro("Administração - A biblia", "Chiaventto", 65.00,
-				administracao, felipe, CalendarUtil.getDataRandomica(),
+				administracao, felipe, dataHoje,
 				"Bom livro sobre os conceitos de administração", wesley);
 		Livro l23 = new Livro("Sistemas Operacionais", "Deitel", 65.00,
-				informatica, jairo, CalendarUtil.getDataRandomica(),
+				informatica, jairo, dataHoje,
 				"Muito simple o entendimento desse livro", wesley);
 
 		livros.add(l1);

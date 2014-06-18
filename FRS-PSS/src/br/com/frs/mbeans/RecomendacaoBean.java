@@ -90,13 +90,29 @@ public class RecomendacaoBean {
 				Recomendacao.class).listaTodos();
 		ArrayList<Recomendacao> recVendedor = new ArrayList<Recomendacao>();
 		for (Recomendacao r : todasRec) {
-			if (r.getLivro().getDono().equals(u)) {
+			if (r.getLivro().getDono().equals(u) && (r.getStatus()!=RecomendacaoStatus.EXECUTADA)) {
 				recVendedor.add(r);
 			}
 		}
-		System.out.println("Entreeeeeeeeeeeeei: " + recVendedor.size());
+		
 		return recVendedor;
 	}
+	
+
+	public List<Recomendacao> getRecomendacoesVendedorExecutadas() {
+		Usuario u = LoginUtil.retornaUsuarioLogado();
+		ArrayList<Recomendacao> todasRec = (ArrayList<Recomendacao>) new DAO<Recomendacao>(
+				Recomendacao.class).listaTodos();
+		ArrayList<Recomendacao> recVendedor = new ArrayList<Recomendacao>();
+		for (Recomendacao r : todasRec) {
+			if (r.getLivro().getDono().equals(u) && r.getStatus().equals(RecomendacaoStatus.EXECUTADA)) {
+				recVendedor.add(r);
+			}
+		}
+		
+		return recVendedor;
+	}
+
 
 	public List<Recomendacao> getRecomendacoesConfirmadasUsuario() {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
@@ -152,11 +168,11 @@ public class RecomendacaoBean {
 		try {
 			MailUtil.enviaEmailAvisoAoDono(this.recomendacao);
 		} catch (EmailException e) {
-			System.out.println("Erro no envio de email ao don do animal");
+			System.out.println("Erro no envio de email ao dono do livro");
 			e.printStackTrace();
 		}
 		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
-		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro"
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
 				+ " alterado para Confirmada!");
 	}
@@ -185,10 +201,25 @@ public class RecomendacaoBean {
 	}
 
 	public void executarConfirmacao() {
-		new DAO<Recomendacao>(Recomendacao.class).remove(this.recomendacao);
+		this.recomendacao.setStatus(RecomendacaoStatus.EXECUTADA);
+		try {
+			MailUtil.enviaEmailExecucao(this.recomendacao);
+		} catch (EmailException e) {
+			System.out.println("Erro no envio de email de execução!!!!");
+			e.printStackTrace();
+		}
+		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
 		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
 				+ this.recomendacao.getLivro().getNome()
-				+ " excluido com sucesso!");
+				+ " Executada... Email enviado para ambos!!!!");
+	}
+	
+	public void desfazerConfirmacao(){
+		this.recomendacao.setStatus(RecomendacaoStatus.ATIVA);
+		new DAO<Recomendacao>(Recomendacao.class).atualiza(this.recomendacao);
+		JSFMessageUtil.sendInfoMessageToUser("Recomendacao ao livro "
+				+ this.recomendacao.getLivro().getNome()
+				+ " Desfeita!!!!");	
 	}
 
 	public void recomendaUsuario(Usuario u) {

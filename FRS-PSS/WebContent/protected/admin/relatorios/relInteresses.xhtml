@@ -50,6 +50,20 @@
 					</p:column>
 
 				</p:dataTable>
+				<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaInteresses" fileName="interesses" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaInteresses" fileName="interesses" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaInteresses" fileName="interesses" />
+				</h:commandLink>
 			</h:form>
 
 		</p:fieldset>

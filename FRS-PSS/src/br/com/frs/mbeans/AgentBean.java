@@ -9,15 +9,21 @@ import br.com.frs.agents.IniciarAgentes;
 public class AgentBean {
 	
 	
-	public void iniciarAgentes(){
+	public void iniciarAgentesRBI(){
 		System.out.println("Iniciando os Agentes");		
-		IniciarAgentes.init();
+		IniciarAgentes.initAgentInteresse();
 		System.out.println("Agentes Criados");		
 	}
 	
-	public void iniciarAgenteDeEmail(){
+	public void iniciarAgentesRBU(){
+		System.out.println("Iniciando os Agentes");		
+		IniciarAgentes.initAgentUsuario();
+		System.out.println("Agentes Criados");		
+	}
+	
+	public void iniciarAgentesRUSI(){
 		System.out.println("Iniciando os Agentes de EMAIL");		
-		IniciarAgentes.init2();
+		IniciarAgentes.initAgentUsuarioSI();
 		System.out.println("Agentes Criados");		
 	}
 	

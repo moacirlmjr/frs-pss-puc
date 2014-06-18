@@ -60,6 +60,20 @@
 					</p:column>
 
 				</p:dataTable>
+				<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaDados" fileName="recomendacoes" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaDados" fileName="recomendacoes" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaDados" fileName="recomendacoes" />
+				</h:commandLink>
 			</h:form>
 		</p:fieldset>
 	</ui:define>

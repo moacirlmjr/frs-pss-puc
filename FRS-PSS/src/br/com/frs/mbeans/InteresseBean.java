@@ -28,23 +28,19 @@ public class InteresseBean {
 	private Interesse interesse;
 	private Categoria selectedCategoria;
 	private Integer interesseID;
-	
 
 	public InteresseBean() {
 		interesse = new Interesse();
 		selectedCategoria = new Categoria();
 	}
 
-	
 	public Integer getInteresseID() {
 		return interesseID;
 	}
 
-
 	public void setInteresseID(Integer interesseID) {
 		this.interesseID = interesseID;
 	}
-
 
 	public Interesse getInteresse() {
 		return interesse;
@@ -100,10 +96,10 @@ public class InteresseBean {
 		for (Interesse i : todosInteresses) {
 
 			for (Livro l : livrosUsuario) {
-
 				if ((i.getCategoriaDeInteresse().getId() == l.getCategoria()
 						.getId())
-						&& (i.getStatus().equals(InteresseStatus.ATIVO))) {
+						&& ((i.getStatus().equals(InteresseStatus.ATIVO) || (i
+								.getStatus().equals(InteresseStatus.EMAIL_VENDEDOR))))) {
 					interessesVendedor.add(i);
 				}
 			}
@@ -129,10 +125,10 @@ public class InteresseBean {
 				+ this.interesse.getCategoriaDeInteresse().getCategoria()
 				+ " gravado com sucesso!");
 	}
-	
-	public void atualizar(InteresseStatus status){
+
+	public void atualizar(InteresseStatus status) {
 		this.interesse.setStatus(status);
-		new DAO<Interesse>(Interesse.class).atualiza(this.interesse); 
+		new DAO<Interesse>(Interesse.class).atualiza(this.interesse);
 	}
 
 	public void tornarInativo() {
@@ -172,24 +168,28 @@ public class InteresseBean {
 		Usuario u = LoginUtil.retornaUsuarioLogado();
 		LivroBean lb = new LivroBean();
 		List<Livro> livrosUsuario = lb.getLivrosUsuario(u);
-		System.out.println("Entreiiii aqui!");
 
 		for (Livro l : livrosUsuario) {
-			System.out.println("Dentro do for!");
-			System.out.println("1 - " + l.getCategoria().getCategoria());
-			System.out.println("2 - " + this.interesse.getCategoriaDeInteresse().getCategoria());
 
-			if (l.getCategoria().getCategoria().equalsIgnoreCase(this.interesse.getCategoriaDeInteresse().getCategoria())) {
-				System.out.println("Entreiiii no iffff!");
+			if (l.getCategoria()
+					.getCategoria()
+					.equalsIgnoreCase(
+							this.interesse.getCategoriaDeInteresse()
+									.getCategoria())) {
+
 				try {
 					atualizar(InteresseStatus.EMAIL_VENDEDOR);
 					JSFMessageUtil.sendInfoMessageToUser("Interesse em "
-							+ this.interesse.getCategoriaDeInteresse().getCategoria() + "do usuario" + this.interesse.getUsuario().getNome() + " foi alterado para EMAIL_VENDEDOR!");
-					MailUtil.enviaEmailRecomendacaoVendedorParaComprador(this.interesse, l);
+							+ this.interesse.getCategoriaDeInteresse()
+									.getCategoria() + " do usuario "
+							+ this.interesse.getUsuario().getNome()
+							+ " foi alterado para EMAIL_VENDEDOR!");
+					MailUtil.enviaEmailRecomendacaoVendedorParaComprador(
+							this.interesse, l);
 				} catch (EmailException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}				
+				}
 			}
 		}
 

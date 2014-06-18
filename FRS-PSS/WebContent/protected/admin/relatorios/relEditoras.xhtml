@@ -12,7 +12,9 @@
 	<ui:define name="conteudo">
 
 		<p:fieldset legend="Relatorio de Editoras">
+		<h:form>
 			<p:dataTable value="#{editoraBean.editoras}" var="editora" paginator="true"
+			id="tabelaEditoras"
 				rows="7" style="text-align:center">
 				<p:column>
 					<f:facet name="header">Identificador</f:facet>
@@ -23,6 +25,21 @@
 					<h:outputText value="#{editora.nome}" />
 				</p:column>
 			</p:dataTable>
+			<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaEditoras" fileName="editoras" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaEditoras" fileName="editoras" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaEditoras" fileName="editoras" />
+				</h:commandLink>
+		</h:form>
 		</p:fieldset>
 	</ui:define>
 
