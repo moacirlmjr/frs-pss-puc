@@ -62,6 +62,7 @@ public class UsuarioBean {
 		ArrayList<Usuario> todosOsUsuariosComInteresse = new ArrayList<Usuario>();
 
 		for (Usuario u : todosOsUsuarios) {
+			
 			if (u.getRole().getId() == 2) {
 				todosOsUsuariosCompradores.add(u);
 				System.out.println(u.getNome());
