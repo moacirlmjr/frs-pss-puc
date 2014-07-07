@@ -3,7 +3,7 @@ package br.com.frs.agents;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
 import br.com.frs.agents.strategies.Contexto;
-import br.com.frs.agents.strategies.RecomendaVendedorBaseadoNaCategoriaEstrategia;
+import br.com.frs.agents.strategies.RecomendaCompradorSemInteresse;
 
 public class AgenteAnalisadorDeUsuariosSemInteresseBehavior extends OneShotBehaviour {
 
@@ -16,7 +16,7 @@ public class AgenteAnalisadorDeUsuariosSemInteresseBehavior extends OneShotBehav
 	@Override
 	public void action() {
 		Contexto contexto = new Contexto(
-				new RecomendaVendedorBaseadoNaCategoriaEstrategia());
+				new RecomendaCompradorSemInteresse());
 		contexto.executeEstrategia();
 
 	}
