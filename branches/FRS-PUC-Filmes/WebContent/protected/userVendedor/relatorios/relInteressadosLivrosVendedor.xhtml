@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+		<p:messages autoUpdate="true" />
+		<p:growl autoUpdate="true" />
+
+		<p:fieldset legend="Relatório de Possíveis Interessados">
+			<h:form id="formPrincipal">
+				<p:dataTable var="interesse"
+					value="#{interesseBean.interessesVendedor}" id="tabelaDados"
+					paginator="true" paginatorAlwaysVisible="true" rows="5"
+					style="text-align:center">
+					<f:facet name="header">Usuários Interessados</f:facet>
+
+					<p:column headerText="Data do Interesse">
+						<h:outputText value="#{interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Categoria de Interesse">
+						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}">
+						</h:outputText>
+					</p:column>
+
+
+					<p:column headerText="Nome do Interessado">
+						<h:outputText value="#{interesse.usuario.nome}">
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Email do Interessado">
+						<h:outputText value="#{interesse.usuario.email}">
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Telefone do Interessado">
+						<h:outputText value="#{interesse.usuario.telefone}">
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Status">
+						<h:outputText value="#{interesse.status}" />
+					</p:column>
+
+					<p:column headerText="Ações">
+						<p:commandLink title="Enviar Email ao Comprador"
+							action="#{interesseBean.enviarEmailComprador}" ajax="false">
+							<p:graphicImage library="img" name="emailico.png" />
+							<f:setPropertyActionListener target="#{interesseBean.interesse}"
+								value="#{interesse}" />
+						</p:commandLink>
+
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
+	</ui:define>
+</ui:composition>
+</html>
