@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+		<h:form>
+			<p:messages autoUpdate="true" />
+			<p:growl autoUpdate="true" />
+		</h:form>
+
+		<p:fieldset legend="Cadastro de Interesses">
+
+			<h:form>
+				<p:dataTable id="categorias" var="categoria"
+					style="text-align:center" value="#{categoriaBean.cdm}"
+					paginator="true" rows="3"
+					selection="#{interesseBean.selectedCategoria}">
+
+					<f:facet name="header">Escolha uma Categoria de interesse</f:facet>
+					<p:column headerText="Seleção" selectionMode="single"
+						style="width:4px; text-align:center"></p:column>
+					<p:column headerText="Id" style="width:15%; text-align:center">  #{categoria.id} </p:column>
+					<p:column headerText="Categoria" style="width:25%">   #{categoria.categoria}  </p:column>
+					<p:column headerText="Imagem" style="width:25%">
+						<p:graphicImage
+							value="/resources/img/livros/#{categoria.categoria}.png" />
+					</p:column>
+					<f:facet name="footer">
+						<p:commandButton value="Escolher" icon="ui-icon-disk"
+							action="#{interesseBean.gravar}" style="text-align:right">
+						</p:commandButton>
+					</f:facet>
+				</p:dataTable>
+			</h:form>
+		</p:fieldset>
+
+	</ui:define>
+
+</ui:composition>
+</html>

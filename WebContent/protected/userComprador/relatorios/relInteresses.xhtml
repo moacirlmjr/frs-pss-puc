@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+		<p:messages autoUpdate="true" />
+		<p:growl autoUpdate="true" />
+
+		<p:fieldset legend="Relatório de Interesses">
+			<h:form id="formPrincipal">
+				<p:dataTable var="interesse" style="text-align:center"
+					value="#{interesseBean.interessesUsuario}" id="tabelaInteresses"
+					rows="3" paginator="true">
+					<f:facet name="header">Interesses Cadastrados</f:facet>
+
+					<p:column headerText="Data do Registro">
+						<h:outputText value="#{interesse.dataRegistro.time}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Status">
+						<h:outputText value="#{interesse.status}" />
+					</p:column>
+
+					<p:column headerText="Categoria">
+						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}" />
+					</p:column>
+
+					<p:column headerText="Imagem" style="width:25%">
+						<p:graphicImage
+							value="/resources/img/livros/#{interesse.categoriaDeInteresse.categoria}.png" />
+					</p:column>
+
+					<p:column headerText="Ações">
+						<p:commandLink title="Tornar Ativa"
+							action="#{interesseBean.tornarAtivo}" icon="ui-icon-disk"
+							ajax="false">
+							<p:graphicImage library="img" name="up_icon.png" />
+							<f:setPropertyActionListener target="#{interesseBean.interesse}"
+								value="#{interesse}" />
+						</p:commandLink>
+
+						<p:commandLink title="Tornar Inativo"
+							action="#{interesseBean.tornarInativo}"
+							icon="ui-icon-arrowrefresh-1-w" ajax="false">
+							<p:graphicImage library="img" name="edit_icon.png" />
+							<f:setPropertyActionListener target="#{interesseBean.interesse}"
+								value="#{interesse}" />
+						</p:commandLink>
+
+						<p:commandLink title="Excluir interesse" icon="ui-icon-close"
+							action="#{interesseBean.excluir}" ajax="false">
+							<p:graphicImage library="img" name="delete_icon.png" />
+							<f:setPropertyActionListener target="#{interesseBean.interesse}"
+								value="#{interesse}" />
+						</p:commandLink>
+
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+
+		</p:fieldset>
+
+	</ui:define>
+</ui:composition>
+</html>
