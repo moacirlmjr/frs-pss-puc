@@ -48,6 +48,16 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>cadastroInteresseFilme</from-outcome>
+			<to-view-id>/protected/userComprador/cadastros/interesseFilmes.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroInteresseMusica</from-outcome>
+			<to-view-id>/protected/userComprador/cadastros/interesseMusica.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>dadosDoUsuarioComprador</from-outcome>
 			<to-view-id>/protected/userComprador/relatorios/relDadosUser.jsf</to-view-id>
 			<redirect />
@@ -71,10 +81,34 @@
 			<to-view-id>/protected/userVendedor/cadastros/livro.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>cadastroFilme</from-outcome>
+			<to-view-id>/protected/userVendedor/cadastros/filme.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>cadastroMusica</from-outcome>
+			<to-view-id>/protected/userVendedor/cadastros/musica.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
 
 		<navigation-case>
 			<from-outcome>relatorioLivrosUsuario</from-outcome>
 			<to-view-id>/protected/userVendedor/relatorios/relLivrosUser.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>relatorioFilmesUsuario</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relFilmesUser.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>relatorioMusicasUsuario</from-outcome>
+			<to-view-id>/protected/userVendedor/relatorios/relMusicasUser.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 
@@ -115,8 +149,28 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>cadastroEstudio</from-outcome>
+			<to-view-id>/protected/admin/cadastros/estudio.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroGravadora</from-outcome>
+			<to-view-id>/protected/admin/cadastros/gravadora.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>cadastroCategoria</from-outcome>
 			<to-view-id>/protected/admin/cadastros/categoria.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroCategoriaFilme</from-outcome>
+			<to-view-id>/protected/admin/cadastros/categoriaFilme.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastroCategoriaMusica</from-outcome>
+			<to-view-id>/protected/admin/cadastros/categoriaMusica.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
@@ -125,13 +179,43 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>relatorioCategoriasFilme</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relCategoriasFilme.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioCategoriasMusica</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relCategoriasMusica.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>relatorioEditoras</from-outcome>
 			<to-view-id>/protected/admin/relatorios/relEditoras.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>relatorioEstudios</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relEstudios.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioGravadoras</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relGravadoras.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>relatorioLivros</from-outcome>
 			<to-view-id>/protected/admin/relatorios/relLivros.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioFilmes</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relFilmes.jsf</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>relatorioMusicas</from-outcome>
+			<to-view-id>/protected/admin/relatorios/relMusicas.jsf</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+	
+		<p:fieldset legend="Relatorio de Categorias de Filmes">
+		<h:form>
+			<p:dataTable value="#{categoriaFilmeBean.categorias}" var="categoriaFilme" paginator="true" id="tabelaCategorias"
+				style="text-align:center" rows="3">
+				<p:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{categoriaFilme.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Descrição</f:facet>
+					<h:outputText value="#{categoriaFilme.categoria}" />
+				</p:column>
+				<p:column headerText="Imagem" style="width:25%">
+					<p:graphicImage value="/resources/img/livros/#{categoriaFilme.categoria}.png" />
+				</p:column>
+			</p:dataTable>
+			<h:commandLink>
+					<p:graphicImage library="img" name="excel.png" />
+					<p:dataExporter type="xls" target="tabelaCategorias" fileName="categoriaFilmes" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="pdf.png" />
+					<p:dataExporter type="pdf" target="tabelaCategorias" fileName="categoriaFilmes" />
+				</h:commandLink>
+
+				<h:commandLink>
+					<p:graphicImage library="img" name="xml.png" />
+					<p:dataExporter type="xml" target="tabelaCategorias" fileName="categoriaFilmes" />
+				</h:commandLink>
+		</h:form>
+		</p:fieldset>
+
+	</ui:define>
+
+</ui:composition>
+</html>

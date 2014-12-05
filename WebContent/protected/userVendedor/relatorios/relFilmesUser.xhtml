@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="../_template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<p:fieldset legend="Relatorio de Filmes">
+			<p:dataTable value="#{filmeBean.filmesUsuario}" var="filme"
+				style="text-align:center" paginator="true" rows="3">
+				<p:column>
+					<f:facet name="header">Identificador</f:facet>
+					<h:outputText value="#{filme.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{filme.nome}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">diretor</f:facet>
+					<h:outputText value="#{filme.diretor}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Estudio</f:facet>
+					<h:outputText value="#{filme.estudio.nome}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Data de Cadastro</f:facet>
+					<h:outputText value="#{filme.dataCadastro.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Categoria</f:facet>
+					<h:outputText value="#{filme.categoriaFilme.categoria}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Preco</f:facet>
+					<h:outputText value="#{filme.preco}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Imagem</f:facet>
+					<p:graphicImage
+						value="/resources/img/filmes/#{filme.categoriaFilme.categoria}.png" />
+				</p:column>
+			</p:dataTable>
+		</p:fieldset>
+	</ui:define>
+
+</ui:composition>
+</html>

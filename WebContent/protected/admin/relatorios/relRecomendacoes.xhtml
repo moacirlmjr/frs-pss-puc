@@ -40,19 +40,29 @@
 
 					<p:column headerText="Categoria de Interesse">
 						<h:outputText
-							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}" />
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaFilmeDeInteresse.categoria}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaMusicaDeInteresse.categoria}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
 
-					<p:column headerText="Nome do livro">
-						<h:outputText value="#{recomendacao.livro.nome}" />
+					<p:column headerText="Recomendação">
+						<h:outputText value="Livro: #{recomendacao.livro.nome}"  rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="Filme: #{recomendacao.filme.nome}"  rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="Musica: #{recomendacao.musica.nome}"  rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
-
+					
 					<p:column headerText="Nome do dono">
-						<h:outputText value="#{recomendacao.livro.dono.nome}" />
+						<h:outputText value="#{recomendacao.livro.dono.nome}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="#{recomendacao.filme.dono.nome}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="#{recomendacao.musica.dono.nome}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
 
 					<p:column headerText="Fone">
-						<h:outputText value="#{recomendacao.livro.dono.telefone}" />
+						<h:outputText value="#{recomendacao.livro.dono.telefone}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="#{recomendacao.filme.dono.telefone}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="#{recomendacao.musica.dono.telefone}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
 
 					<p:column headerText="Status">
