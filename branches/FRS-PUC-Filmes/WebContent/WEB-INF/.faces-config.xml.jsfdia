@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#public#login.jsf" NAME="output"
+    PATH="/public/login.jsf" TARGET="rules:#public#login.jsf"
+    TITLE="login" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="logout::#public#login.jsf" NAME="output1"
+    PATH="/public/login.jsf" TARGET="rules:#public#login.jsf"
+    TITLE="logout" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="acessoNegado::#public#acessoNegado.jsf"
+    NAME="output2" PATH="/public/acessoNegado.jsf"
+    TARGET="rules:#public#acessoNegado.jsf" TITLE="acessoNegado" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="instrucoes::public#instrucoes.jsf"
+    NAME="output3" PATH="public/instrucoes.jsf"
+    TARGET="rules:public#instrucoes.jsf" TITLE="instrucoes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="contato::public#contato.jsf" NAME="output4"
+    PATH="public/contato.jsf" TARGET="rules:public#contato.jsf"
+    TITLE="contato" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cadastroUsuarioPublico::public#usuario.jsf"
+    NAME="output5" PATH="public/usuario.jsf"
+    TARGET="rules:public#usuario.jsf" TITLE="cadastroUsuarioPublico" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroInteresse::#protected#userComprador#cadastros#interesse.jsf"
+    NAME="output6"
+    PATH="/protected/userComprador/cadastros/interesse.jsf"
+    TARGET="rules:#protected#userComprador#cadastros#interesse.jsf"
+    TITLE="cadastroInteresse" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroInteresseFilme::#protected#userComprador#cadastros#interesseFilmes.jsf"
+    NAME="output7"
+    PATH="/protected/userComprador/cadastros/interesseFilmes.jsf"
+    TARGET="rules:#protected#userComprador#cadastros#interesseFilmes.jsf"
+    TITLE="cadastroInteresseFilme" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroInteresseMusica::#protected#userComprador#cadastros#interesseMusica.jsf"
+    NAME="output8"
+    PATH="/protected/userComprador/cadastros/interesseMusica.jsf"
+    TARGET="rules:#protected#userComprador#cadastros#interesseMusica.jsf"
+    TITLE="cadastroInteresseMusica" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relRecomendacoesComprador::#protected#userComprador#relatorios#relRecomendacoesComprador.jsf"
+    NAME="output9"
+    PATH="/protected/userComprador/relatorios/relRecomendacoesComprador.jsf"
+    TARGET="rules:#protected#userComprador#relatorios#relRecomendacoesComprador.jsf"
+    TITLE="relRecomendacoesComprador" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroLivro::#protected#userVendedor#cadastros#livro.jsf"
+    NAME="output10" PATH="/protected/userVendedor/cadastros/livro.jsf"
+    TARGET="rules:#protected#userVendedor#cadastros#livro.jsf"
+    TITLE="cadastroLivro" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroFilme::#protected#userVendedor#cadastros#filme.jsf"
+    NAME="output11" PATH="/protected/userVendedor/cadastros/filme.jsf"
+    TARGET="rules:#protected#userVendedor#cadastros#filme.jsf"
+    TITLE="cadastroFilme" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroMusica::#protected#userVendedor#cadastros#musica.jsf"
+    NAME="output12" PATH="/protected/userVendedor/cadastros/musica.jsf"
+    TARGET="rules:#protected#userVendedor#cadastros#musica.jsf"
+    TITLE="cadastroMusica" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioLivrosUsuario::#protected#userVendedor#relatorios#relLivrosUser.jsf"
+    NAME="output13"
+    PATH="/protected/userVendedor/relatorios/relLivrosUser.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relLivrosUser.jsf"
+    TITLE="relatorioLivrosUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioFilmesUsuario::#protected#userVendedor#relatorios#relFilmesUser.jsf"
+    NAME="output14"
+    PATH="/protected/userVendedor/relatorios/relFilmesUser.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relFilmesUser.jsf"
+    TITLE="relatorioFilmesUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioMusicasUsuario::#protected#userVendedor#relatorios#relMusicasUser.jsf"
+    NAME="output15"
+    PATH="/protected/userVendedor/relatorios/relMusicasUser.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relMusicasUser.jsf"
+    TITLE="relatorioMusicasUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioInteressesVendedor::#protected#userVendedor#relatorios#relInteressadosLivrosVendedor.jsf"
+    NAME="output16"
+    PATH="/protected/userVendedor/relatorios/relInteressadosLivrosVendedor.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relInteressadosLivrosVendedor.jsf"
+    TITLE="relatorioInteressesVendedor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioRecomendacoesVendedor::#protected#userVendedor#relatorios#relRecomendacoesLivrosVendedor.jsf"
+    NAME="output17"
+    PATH="/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relRecomendacoesLivrosVendedor.jsf"
+    TITLE="relatorioRecomendacoesVendedor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioRecomendacoesVendedorExecutadas::#protected#userVendedor#relatorios#relRecomendacoesExecutadas.jsf"
+    NAME="output18"
+    PATH="/protected/userVendedor/relatorios/relRecomendacoesExecutadas.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relRecomendacoesExecutadas.jsf"
+    TITLE="relatorioRecomendacoesVendedorExecutadas" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dadosDoUsuarioVendedor::#protected#userVendedor#relatorios#relDadosUser.jsf"
+    NAME="output19"
+    PATH="/protected/userVendedor/relatorios/relDadosUser.jsf"
+    TARGET="rules:#protected#userVendedor#relatorios#relDadosUser.jsf"
+    TITLE="dadosDoUsuarioVendedor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroUsuario::#protected#admin#cadastros#usuario.jsf"
+    NAME="output20" PATH="/protected/admin/cadastros/usuario.jsf"
+    TARGET="rules:#protected#admin#cadastros#usuario.jsf"
+    TITLE="cadastroUsuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroEditora::#protected#admin#cadastros#editora.jsf"
+    NAME="output21" PATH="/protected/admin/cadastros/editora.jsf"
+    TARGET="rules:#protected#admin#cadastros#editora.jsf"
+    TITLE="cadastroEditora" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroEstudio::#protected#admin#cadastros#estudio.jsf"
+    NAME="output22" PATH="/protected/admin/cadastros/estudio.jsf"
+    TARGET="rules:#protected#admin#cadastros#estudio.jsf"
+    TITLE="cadastroEstudio" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroGravadora::#protected#admin#cadastros#gravadora.jsf"
+    NAME="output23" PATH="/protected/admin/cadastros/gravadora.jsf"
+    TARGET="rules:#protected#admin#cadastros#gravadora.jsf"
+    TITLE="cadastroGravadora" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroCategoria::#protected#admin#cadastros#categoria.jsf"
+    NAME="output24" PATH="/protected/admin/cadastros/categoria.jsf"
+    TARGET="rules:#protected#admin#cadastros#categoria.jsf"
+    TITLE="cadastroCategoria" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroCategoriaFilme::#protected#admin#cadastros#categoriaFilme.jsf"
+    NAME="output25" PATH="/protected/admin/cadastros/categoriaFilme.jsf"
+    TARGET="rules:#protected#admin#cadastros#categoriaFilme.jsf"
+    TITLE="cadastroCategoriaFilme" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="cadastroCategoriaMusica::#protected#admin#cadastros#categoriaMusica.jsf"
+    NAME="output26"
+    PATH="/protected/admin/cadastros/categoriaMusica.jsf"
+    TARGET="rules:#protected#admin#cadastros#categoriaMusica.jsf"
+    TITLE="cadastroCategoriaMusica" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioCategorias::#protected#admin#relatorios#relCategorias.jsf"
+    NAME="output27" PATH="/protected/admin/relatorios/relCategorias.jsf"
+    TARGET="rules:#protected#admin#relatorios#relCategorias.jsf"
+    TITLE="relatorioCategorias" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioCategoriasFilme::#protected#admin#relatorios#relCategoriasFilme.jsf"
+    NAME="output28"
+    PATH="/protected/admin/relatorios/relCategoriasFilme.jsf"
+    TARGET="rules:#protected#admin#relatorios#relCategoriasFilme.jsf"
+    TITLE="relatorioCategoriasFilme" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioCategoriasMusica::#protected#admin#relatorios#relCategoriasMusica.jsf"
+    NAME="output29"
+    PATH="/protected/admin/relatorios/relCategoriasMusica.jsf"
+    TARGET="rules:#protected#admin#relatorios#relCategoriasMusica.jsf"
+    TITLE="relatorioCategoriasMusica" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioEditoras::#protected#admin#relatorios#relEditoras.jsf"
+    NAME="output30" PATH="/protected/admin/relatorios/relEditoras.jsf"
+    TARGET="rules:#protected#admin#relatorios#relEditoras.jsf"
+    TITLE="relatorioEditoras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioEstudios::#protected#admin#relatorios#relEstudios.jsf"
+    NAME="output31" PATH="/protected/admin/relatorios/relEstudios.jsf"
+    TARGET="rules:#protected#admin#relatorios#relEstudios.jsf"
+    TITLE="relatorioEstudios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioGravadoras::#protected#admin#relatorios#relGravadoras.jsf"
+    NAME="output32" PATH="/protected/admin/relatorios/relGravadoras.jsf"
+    TARGET="rules:#protected#admin#relatorios#relGravadoras.jsf"
+    TITLE="relatorioGravadoras" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioLivros::#protected#admin#relatorios#relLivros.jsf"
+    NAME="output33" PATH="/protected/admin/relatorios/relLivros.jsf"
+    TARGET="rules:#protected#admin#relatorios#relLivros.jsf"
+    TITLE="relatorioLivros" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioFilmes::#protected#admin#relatorios#relFilmes.jsf"
+    NAME="output34" PATH="/protected/admin/relatorios/relFilmes.jsf"
+    TARGET="rules:#protected#admin#relatorios#relFilmes.jsf"
+    TITLE="relatorioFilmes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioMusicas::#protected#admin#relatorios#relMusicas.jsf"
+    NAME="output35" PATH="/protected/admin/relatorios/relMusicas.jsf"
+    TARGET="rules:#protected#admin#relatorios#relMusicas.jsf"
+    TITLE="relatorioMusicas" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioUsuarios::#protected#admin#relatorios#relUsuarios.jsf"
+    NAME="output36" PATH="/protected/admin/relatorios/relUsuarios.jsf"
+    TARGET="rules:#protected#admin#relatorios#relUsuarios.jsf"
+    TITLE="relatorioUsuarios" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioUsuariosSemInteresse::#protected#admin#relatorios#relUsuariosSemInteresses.jsf"
+    NAME="output37"
+    PATH="/protected/admin/relatorios/relUsuariosSemInteresses.jsf"
+    TARGET="rules:#protected#admin#relatorios#relUsuariosSemInteresses.jsf"
+    TITLE="relatorioUsuariosSemInteresse" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioUsuariosSemRecomendacao::#protected#admin#relatorios#relUsuariosSemRecomendacao.jsf"
+    NAME="output38"
+    PATH="/protected/admin/relatorios/relUsuariosSemRecomendacao.jsf"
+    TARGET="rules:#protected#admin#relatorios#relUsuariosSemRecomendacao.jsf"
+    TITLE="relatorioUsuariosSemRecomendacao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioInteresses::#protected#admin#relatorios#relInteresses.jsf"
+    NAME="output39" PATH="/protected/admin/relatorios/relInteresses.jsf"
+    TARGET="rules:#protected#admin#relatorios#relInteresses.jsf"
+    TITLE="relatorioInteresses" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="relatorioRecomendacoes::#protected#admin#relatorios#relRecomendacoes.jsf"
+    NAME="output40"
+    PATH="/protected/admin/relatorios/relRecomendacoes.jsf"
+    TARGET="rules:#protected#admin#relatorios#relRecomendacoes.jsf"
+    TITLE="relatorioRecomendacoes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#public#acessoNegado.jsf"
+  PATH="/public/acessoNegado.jsf" SHAPE="304,977,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#cadastros#editora.jsf"
+  PATH="/protected/admin/cadastros/editora.jsf" SHAPE="304,2657,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#userVendedor#cadastros#livro.jsf"
+  PATH="/protected/userVendedor/cadastros/livro.jsf"
+  SHAPE="304,1873,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relDadosUser.jsf"
+  PATH="/protected/userVendedor/relatorios/relDadosUser.jsf"
+  SHAPE="304,2433,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relLivros.jsf"
+  PATH="/protected/admin/relatorios/relLivros.jsf" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#cadastros#interesse.jsf"
+  PATH="/protected/userComprador/cadastros/interesse.jsf"
+  SHAPE="304,1425,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#relatorios#relRecomendacoesComprador.jsf"
+  PATH="/protected/userComprador/relatorios/relRecomendacoesComprador.jsf"
+  SHAPE="304,1761,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relUsuarios.jsf"
+  PATH="/protected/admin/relatorios/relUsuarios.jsf" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relUsuariosSemInteresses.jsf"
+  PATH="/protected/admin/relatorios/relUsuariosSemInteresses.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relRecomendacoesExecutadas.jsf"
+  PATH="/protected/userVendedor/relatorios/relRecomendacoesExecutadas.jsf"
+  SHAPE="304,2321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relEditoras.jsf"
+  PATH="/protected/admin/relatorios/relEditoras.jsf"
+  SHAPE="304,2993,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relRecomendacoesLivrosVendedor.jsf"
+  PATH="/protected/userVendedor/relatorios/relRecomendacoesLivrosVendedor.jsf"
+  SHAPE="304,2209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#cadastros#usuario.jsf"
+  PATH="/protected/admin/cadastros/usuario.jsf" SHAPE="304,2545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relCategorias.jsf"
+  PATH="/protected/admin/relatorios/relCategorias.jsf"
+  SHAPE="304,2881,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relUsuariosSemRecomendacao.jsf"
+  PATH="/protected/admin/relatorios/relUsuariosSemRecomendacao.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#public#login.jsf" PATH="/public/login.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relRecomendacoes.jsf"
+  PATH="/protected/admin/relatorios/relRecomendacoes.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relLivrosUser.jsf"
+  PATH="/protected/userVendedor/relatorios/relLivrosUser.jsf"
+  SHAPE="304,1985,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relInteresses.jsf"
+  PATH="/protected/admin/relatorios/relInteresses.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:public#instrucoes.jsf"
+  PATH="public/instrucoes.jsf" SHAPE="304,1089,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relInteressadosLivrosVendedor.jsf"
+  PATH="/protected/userVendedor/relatorios/relInteressadosLivrosVendedor.jsf"
+  SHAPE="304,2097,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#relatorios#relInteresses.jsf"
+  PATH="/protected/userComprador/relatorios/relInteresses.jsf"
+  SHAPE="304,1649,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:public#usuario.jsf" PATH="public/usuario.jsf"
+  SHAPE="304,1313,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:public#contato.jsf" PATH="public/contato.jsf"
+  SHAPE="304,1201,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#relatorios#relDadosUser.jsf"
+  PATH="/protected/userComprador/relatorios/relDadosUser.jsf"
+  SHAPE="304,1537,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#cadastros#categoria.jsf"
+  PATH="/protected/admin/cadastros/categoria.jsf" SHAPE="304,2769,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#userVendedor#cadastros#musica.jsf"
+  PATH="/protected/userVendedor/cadastros/musica.jsf"
+  SHAPE="304,1089,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#userVendedor#cadastros#filme.jsf"
+  PATH="/protected/userVendedor/cadastros/filme.jsf" SHAPE="304,977,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relMusicasUser.jsf"
+  PATH="/protected/userVendedor/relatorios/relMusicasUser.jsf"
+  SHAPE="304,1153,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userVendedor#relatorios#relFilmesUser.jsf"
+  PATH="/protected/userVendedor/relatorios/relFilmesUser.jsf"
+  SHAPE="304,1041,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relEstudios.jsf"
+  PATH="/protected/admin/relatorios/relEstudios.jsf"
+  SHAPE="304,1777,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#cadastros#gravadora.jsf"
+  PATH="/protected/admin/cadastros/gravadora.jsf" SHAPE="304,1217,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#cadastros#estudio.jsf"
+  PATH="/protected/admin/cadastros/estudio.jsf" SHAPE="304,1105,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#cadastros#categoriaMusica.jsf"
+  PATH="/protected/admin/cadastros/categoriaMusica.jsf"
+  SHAPE="304,1441,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relGravadoras.jsf"
+  PATH="/protected/admin/relatorios/relGravadoras.jsf"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#cadastros#categoriaFilme.jsf"
+  PATH="/protected/admin/cadastros/categoriaFilme.jsf"
+  SHAPE="304,1329,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relCategoriasMusica.jsf"
+  PATH="/protected/admin/relatorios/relCategoriasMusica.jsf"
+  SHAPE="304,1665,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#admin#relatorios#relCategoriasFilme.jsf"
+  PATH="/protected/admin/relatorios/relCategoriasFilme.jsf"
+  SHAPE="304,1553,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relMusicas.jsf"
+  PATH="/protected/admin/relatorios/relMusicas.jsf" SHAPE="304,1473,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#admin#relatorios#relFilmes.jsf"
+  PATH="/protected/admin/relatorios/relFilmes.jsf" SHAPE="304,1361,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#cadastros#interesseMusica.jsf"
+  PATH="/protected/userComprador/cadastros/interesseMusica.jsf"
+  SHAPE="304,1537,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#protected#userComprador#cadastros#interesseFilmes.jsf"
+  PATH="/protected/userComprador/cadastros/interesseFilmes.jsf"
+  SHAPE="304,1425,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

@@ -31,7 +31,9 @@
 					</p:column>
 
 					<p:column headerText="Categoria">
-						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}" />
+						<h:outputText value="#{interesse.categoriaDeInteresse.categoria}" rendered="#{interesse.categoriaDeInteresse!=null}"/>
+						<h:outputText value="#{interesse.categoriaFilmeDeInteresse.categoria}" rendered="#{interesse.categoriaFilmeDeInteresse!=null}"/>
+						<h:outputText value="#{interesse.categoriaMusicaDeInteresse.categoria}" rendered="#{interesse.categoriaMusicaDeInteresse!=null}"/>
 					</p:column>
 
 					<p:column headerText="Imagem" style="width:25%">

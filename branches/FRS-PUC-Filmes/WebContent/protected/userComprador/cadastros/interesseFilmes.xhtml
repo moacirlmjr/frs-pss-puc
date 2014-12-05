@@ -15,15 +15,15 @@
 			<p:growl autoUpdate="true" />
 		</h:form>
 
-		<p:fieldset legend="Cadastro de Interesses">
+		<p:fieldset legend="Cadastro de Interesses de Filmes">
 
 			<h:form>
-				<p:dataTable id="categorias" var="categoria"
-					style="text-align:center" value="#{categoriaBean.cdm}"
+				<p:dataTable id="categorias2" var="categoria"
+					style="text-align:center" value="#{categoriaFilmeBean.cdm}"
 					paginator="true" rows="3"
-					selection="#{interesseBean.selectedCategoria}">
+					selection="#{interesseBean.selectedCategoriaFilme}">
 
-					<f:facet name="header">Escolha uma Categoria de interesse de Livro</f:facet>
+					<f:facet name="header">Escolha uma Categoria de interesse de Filme</f:facet>
 					<p:column headerText="Seleção" selectionMode="single"
 						style="width:4px; text-align:center"></p:column>
 					<p:column headerText="Id" style="width:15%; text-align:center">  #{categoria.id} </p:column>

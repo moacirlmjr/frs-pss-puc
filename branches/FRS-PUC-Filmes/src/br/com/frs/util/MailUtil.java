@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
+import br.com.frs.modelo.Filme;
 import br.com.frs.modelo.Interesse;
 import br.com.frs.modelo.Livro;
+import br.com.frs.modelo.Musica;
 import br.com.frs.modelo.Recomendacao;
 import br.com.frs.modelo.Usuario;
 
@@ -77,7 +79,13 @@ public class MailUtil {
 					+ user.getNome()
 					+ "\n"
 					+ "Informamos que seu interesse na categoria "
-					+ interesse.getCategoriaDeInteresse().getCategoria()
+					+ (interesse.getCategoriaDeInteresse() != null ? interesse
+							.getCategoriaDeInteresse().getCategoria()
+							: interesse.getCategoriaFilmeDeInteresse() != null ? interesse
+									.getCategoriaFilmeDeInteresse()
+									.getCategoria() : interesse
+									.getCategoriaMusicaDeInteresse()
+									.getCategoria())
 					+ " foi cadastrado com sucesso em nossa base de dados!"
 					+ "\n"
 					+ "Em breve estaremos enviando algumas sugestões com base na sua preferência."
@@ -142,33 +150,52 @@ public class MailUtil {
 			email.setSSL(true);
 			email.addTo(user.getEmail());
 			email.setFrom(MailUtil.MAIL_USER);
-			email.setSubject("Recomendação de livro" + " - "
-					+ MailUtil.MAIL_OWNER);
+			email.setSubject("Recomendação " + " - " + MailUtil.MAIL_OWNER);
 			email.setMsg("Olá,  "
 					+ user.getNome()
 					+ "\n"
-					+ "Temos um livro que pode ser do seu interesse! "
+					+ "Temos uma recomendação que pode ser do seu interesse! "
 					+ "\n"
 					+ "Categoria: "
-					+ rec.getInteresse().getCategoriaDeInteresse()
+					+ (rec.getInteresse().getCategoriaDeInteresse() != null ? rec
+							.getInteresse().getCategoriaDeInteresse()
 							.getCategoria()
+							: rec.getInteresse().getCategoriaFilmeDeInteresse() != null ? rec
+									.getInteresse()
+									.getCategoriaFilmeDeInteresse()
+									.getCategoria()
+									: rec.getInteresse()
+											.getCategoriaMusicaDeInteresse()
+											.getCategoria())
 					+ "\n"
-					+ "Livro: "
-					+ rec.getLivro().getNome()
+					+ (rec.getLivro() != null ? "Livro: "
+							+ rec.getLivro().getNome()
+							: rec.getFilme() != null ? "Filme: "
+									+ rec.getFilme().getNome() : "Musica: "
+									+ rec.getMusica().getNome())
 					+ "\n"
 					+ "\n"
 					+ "Abaixo segue os dados do dono do Livro: "
 					+ "\n"
 					+ "Nome: "
-					+ rec.getLivro().getDono().getNome()
+					+ (rec.getLivro() != null ? rec.getLivro().getDono()
+							.getNome() : rec.getFilme() != null ? rec
+							.getFilme().getDono().getNome() : rec.getMusica()
+							.getDono().getNome())
 					+ "\n"
 					+ "Telefone: "
-					+ rec.getLivro().getDono().getTelefone()
+					+ (rec.getLivro() != null ? rec.getLivro().getDono()
+							.getTelefone() : rec.getFilme() != null ? rec
+							.getFilme().getDono().getTelefone() : rec
+							.getMusica().getDono().getTelefone())
 					+ "\n"
 					+ "Email: "
-					+ rec.getLivro().getDono().getEmail()
+					+ (rec.getLivro() != null ? rec.getLivro().getDono()
+							.getEmail() : rec.getFilme() != null ? rec
+							.getFilme().getDono().getEmail() : rec.getMusica()
+							.getDono().getEmail())
 					+ "\n \n"
-					+ "Gostou do Livro?"
+					+ "Gostou da Recomendação?"
 					+ "\n"
 					+ "Entre em contato com o dono para os acertos finais!!!"
 					+ "\n"
@@ -238,6 +265,118 @@ public class MailUtil {
 	}
 
 	@SuppressWarnings("deprecation")
+	public static void enviaEmailRecomendacaoVendedorParaCompradorFilme(
+			Interesse in, Filme liv) throws EmailException {
+
+		SimpleEmail email = new SimpleEmail();
+
+		try {
+			@SuppressWarnings("unused")
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			Usuario user = in.getUsuario();
+			email.setDebug(true);
+			email.setHostName("smtp.gmail.com");
+			email.setAuthentication(MailUtil.ACOOUNT_USER, MailUtil.MAIL_PWD);
+			email.setSSL(true);
+			email.addTo(user.getEmail());
+			email.setFrom(MailUtil.MAIL_USER);
+			email.setSubject("Recomendação de Filme" + " - "
+					+ MailUtil.MAIL_OWNER);
+			email.setMsg("Olá,  "
+					+ user.getNome()
+					+ "\n"
+					+ "Eu possuo um Filme que pode ser do seu interesse! "
+					+ "\n"
+					+ "Filme: "
+					+ liv.getNome()
+					+ "\n"
+					+ "Categoria: "
+					+ liv.getCategoriaFilme().getCategoria()
+					+ "\n"
+					+ "Estudio: "
+					+ liv.getEstudio().getNome()
+					+ "\n"
+					+ "Observacao: "
+					+ liv.getObservacao()
+					+ "\n"
+					+ "Abaixo segue os meus dados: "
+					+ "\n"
+					+ "Nome: "
+					+ liv.getDono().getNome()
+					+ "\n"
+					+ "Telefone: "
+					+ liv.getDono().getTelefone()
+					+ "\n"
+					+ "Email: "
+					+ liv.getDono().getEmail()
+					+ "\n \n"
+					+ "Gostou do Filme? entre em comigo para os acertos finais!!!"
+					+ "\n" + "Qualquer dúvida, retorne o email!" + "\n"
+					+ "Aguardo retorno!");
+			email.send();
+
+		} catch (EmailException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@SuppressWarnings("deprecation")
+	public static void enviaEmailRecomendacaoVendedorParaCompradorMusica(
+			Interesse in, Musica liv) throws EmailException {
+
+		SimpleEmail email = new SimpleEmail();
+
+		try {
+			@SuppressWarnings("unused")
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			Usuario user = in.getUsuario();
+			email.setDebug(true);
+			email.setHostName("smtp.gmail.com");
+			email.setAuthentication(MailUtil.ACOOUNT_USER, MailUtil.MAIL_PWD);
+			email.setSSL(true);
+			email.addTo(user.getEmail());
+			email.setFrom(MailUtil.MAIL_USER);
+			email.setSubject("Recomendação de Música" + " - "
+					+ MailUtil.MAIL_OWNER);
+			email.setMsg("Olá,  "
+					+ user.getNome()
+					+ "\n"
+					+ "Eu possuo uma Música que pode ser do seu interesse! "
+					+ "\n"
+					+ "Música: "
+					+ liv.getNome()
+					+ "\n"
+					+ "Categoria: "
+					+ liv.getCategoriaMusica().getCategoria()
+					+ "\n"
+					+ "Estudio: "
+					+ liv.getGravadora().getNome()
+					+ "\n"
+					+ "Observacao: "
+					+ liv.getObservacao()
+					+ "\n"
+					+ "Abaixo segue os meus dados: "
+					+ "\n"
+					+ "Nome: "
+					+ liv.getDono().getNome()
+					+ "\n"
+					+ "Telefone: "
+					+ liv.getDono().getTelefone()
+					+ "\n"
+					+ "Email: "
+					+ liv.getDono().getEmail()
+					+ "\n \n"
+					+ "Gostou da Música? entre em comigo para os acertos finais!!!"
+					+ "\n" + "Qualquer dúvida, retorne o email!" + "\n"
+					+ "Aguardo retorno!");
+			email.send();
+
+		} catch (EmailException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@SuppressWarnings("deprecation")
 	public static void enviaEmailAvisoAoDono(Recomendacao rec)
 			throws EmailException {
 
@@ -254,10 +393,22 @@ public class MailUtil {
 			email.addTo(user.getEmail());
 			email.setFrom(MailUtil.MAIL_USER);
 			email.setSubject("Interesse em Livro" + " - " + MailUtil.MAIL_OWNER);
-			email.setMsg("Olá,  " + user.getNome() + "\n"
-					+ "Estou interesado em seu Livro: " + "\n" + "Nome: "
-					+ rec.getLivro().getNome() + "\n" + "Categoria: "
-					+ rec.getLivro().getCategoria() + "\n" + "\n"
+			email.setMsg("Olá,  "
+					+ user.getNome()
+					+ "\n"
+					+ "Estou interesado em seu Livro: "
+					+ "\n"
+					+ "Nome: "
+					+ (rec.getLivro() != null ? rec.getLivro().getNome() : rec
+							.getFilme() != null ? rec.getFilme().getNome()
+							: rec.getMusica().getNome())
+					+ "\n"
+					+ "Categoria: "
+					+ (rec.getLivro() != null ? rec.getLivro().getCategoria()
+							.getCategoria() : rec.getFilme() != null ? rec
+							.getFilme().getCategoriaFilme().getCategoria()
+							: rec.getMusica().getCategoriaMusica()
+									.getCategoria()) + "\n" + "\n"
 					+ "Abaixo segue meus dados para contato: " + "\n"
 					+ "Nome: " + rec.getInteresse().getUsuario().getNome()
 					+ "\n" + "Telefone: "
@@ -281,7 +432,9 @@ public class MailUtil {
 	private static void enviaEmailExecucaoVendedor(Recomendacao rec) {
 
 		SimpleEmail email = new SimpleEmail();
-		Usuario usuarioComprador = rec.getLivro().getDono();
+		Usuario usuarioComprador = (rec.getLivro() != null ? rec.getLivro().getDono()
+				: rec.getFilme() != null ? rec.getFilme().getDono() : rec
+						.getMusica().getDono());
 		Usuario usuarioVendedor = rec.getInteresse().getUsuario();
 
 		try {
@@ -295,11 +448,23 @@ public class MailUtil {
 			email.setFrom(MailUtil.MAIL_USER);
 			email.setSubject("Recomendação Executada" + " - "
 					+ MailUtil.MAIL_OWNER);
-			email.setMsg("Olá,  " + usuarioComprador.getNome() + "\n"
-					+ "Fechamos Negocio no Livro: " + "\n" + "Nome: "
-					+ rec.getLivro().getNome() + "\n" + "Categoria: "
-					+ rec.getLivro().getCategoria().getCategoria() + "\n"
-					+ "\n" + "Abaixo segue meus dados para contato: " + "\n"
+			email.setMsg("Olá,  "
+					+ usuarioComprador.getNome()
+					+ "\n"
+					+ "Fechamos Negocio no Livro: "
+					+ "\n"
+					+ "Nome: "
+					+ (rec.getLivro() != null ? rec.getLivro().getNome() : rec
+							.getFilme() != null ? rec.getFilme().getNome()
+							: rec.getMusica().getNome())
+					+ "\n"
+					+ "Categoria: "
+					+ (rec.getLivro() != null ? rec.getLivro().getCategoria()
+							.getCategoria() : rec.getFilme() != null ? rec
+							.getFilme().getCategoriaFilme().getCategoria()
+							: rec.getMusica().getCategoriaMusica()
+									.getCategoria()) + "\n" + "\n"
+					+ "Abaixo segue meus dados para contato: " + "\n"
 					+ "Nome: " + usuarioVendedor.getNome() + "\n"
 					+ "Telefone: " + usuarioVendedor.getTelefone() + "\n"
 					+ "Email: " + usuarioVendedor.getEmail() + "\n \n"
@@ -317,7 +482,9 @@ public class MailUtil {
 	private static void enviaEmailExecucaoComprador(Recomendacao rec) {
 
 		SimpleEmail email = new SimpleEmail();
-		Usuario usuarioComprador = rec.getLivro().getDono();
+		Usuario usuarioComprador = (rec.getLivro() != null ? rec.getLivro()
+				.getDono() : rec.getFilme() != null ? rec.getFilme().getDono()
+				: rec.getMusica().getDono());
 		Usuario usuarioVendedor = rec.getInteresse().getUsuario();
 
 		try {
@@ -337,10 +504,16 @@ public class MailUtil {
 					+ "Fechamos Negocio no Livro: "
 					+ "\n"
 					+ "Nome: "
-					+ rec.getLivro().getNome()
+					+ (rec.getLivro() != null ? rec.getLivro().getNome() : rec
+							.getFilme() != null ? rec.getFilme().getNome()
+							: rec.getMusica().getNome())
 					+ "\n"
 					+ "Categoria: "
-					+ rec.getLivro().getCategoria().getCategoria()
+					+ (rec.getLivro() != null ? rec.getLivro().getCategoria()
+							.getCategoria() : rec.getFilme() != null ? rec
+							.getFilme().getCategoriaFilme().getCategoria()
+							: rec.getMusica().getCategoriaMusica()
+									.getCategoria())
 					+ "\n"
 					+ "\n"
 					+ "Abaixo segue meus dados para contato: "

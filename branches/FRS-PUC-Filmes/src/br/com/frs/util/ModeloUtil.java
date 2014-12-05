@@ -372,21 +372,21 @@ public class ModeloUtil {
 		livros.add(l22);
 		livros.add(l23);
 
-		Interesse i1 = new Interesse(roberto, erotico);
-		Interesse i2 = new Interesse(roberto, informatica);
-		Interesse i3 = new Interesse(roberto, autoAjuda);
-		Interesse i4 = new Interesse(danyllo, erotico);
-		Interesse i5 = new Interesse(danyllo, informatica);
-		Interesse i6 = new Interesse(danyllo, autoAjuda);
-		Interesse i7 = new Interesse(gilsantos, administracao);
-		Interesse i8 = new Interesse(gilsantos, informatica);
-		Interesse i9 = new Interesse(gilsantos, romance);
-		Interesse i10 = new Interesse(rose, autoAjuda);
-		Interesse i11 = new Interesse(rose, erotico);
-		Interesse i12 = new Interesse(rose, romance);
-		Interesse i13 = new Interesse(clarisse, autoAjuda);
-		Interesse i14 = new Interesse(rose, ciencias);
-		Interesse i15 = new Interesse(rose, quimica);
+		Interesse i1 = new Interesse(roberto, erotico, null, null);
+		Interesse i2 = new Interesse(roberto, informatica, null, null);
+		Interesse i3 = new Interesse(roberto, autoAjuda, null, null);
+		Interesse i4 = new Interesse(danyllo, erotico, null, null);
+		Interesse i5 = new Interesse(danyllo, informatica, null, null);
+		Interesse i6 = new Interesse(danyllo, autoAjuda, null, null);
+		Interesse i7 = new Interesse(gilsantos, administracao, null, null);
+		Interesse i8 = new Interesse(gilsantos, informatica, null, null);
+		Interesse i9 = new Interesse(gilsantos, romance, null, null);
+		Interesse i10 = new Interesse(rose, autoAjuda, null, null);
+		Interesse i11 = new Interesse(rose, erotico, null, null);
+		Interesse i12 = new Interesse(rose, romance, null, null);
+		Interesse i13 = new Interesse(clarisse, autoAjuda, null, null);
+		Interesse i14 = new Interesse(rose, ciencias, null, null);
+		Interesse i15 = new Interesse(rose, quimica, null, null);
 
 		interesses.add(i1);
 		interesses.add(i2);
@@ -404,12 +404,12 @@ public class ModeloUtil {
 		interesses.add(i14);
 		interesses.add(i15);
 
-		Recomendacao r1 = new Recomendacao(i1, l6);
-		Recomendacao r2 = new Recomendacao(i2, l7);
-		Recomendacao r3 = new Recomendacao(i3, l4);
-		Recomendacao r4 = new Recomendacao(i7, l22);
-		Recomendacao r5 = new Recomendacao(i8, l23);
-		Recomendacao r6 = new Recomendacao(i9, l2);
+		Recomendacao r1 = new Recomendacao(i1, l6,null,null);
+		Recomendacao r2 = new Recomendacao(i2, l7,null,null);
+		Recomendacao r3 = new Recomendacao(i3, l4,null,null);
+		Recomendacao r4 = new Recomendacao(i7, l22,null,null);
+		Recomendacao r5 = new Recomendacao(i8, l23,null,null);
+		Recomendacao r6 = new Recomendacao(i9, l2,null,null);
 
 		recomendacoes.add(r1);
 		recomendacoes.add(r2);

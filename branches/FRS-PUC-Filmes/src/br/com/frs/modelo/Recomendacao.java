@@ -23,8 +23,8 @@ import br.com.frs.modelo.interfaces.Generic;
 		@NamedQuery(name = "Recomendacao.findAllRecomendacaoesUsuario", query = "select r from Recomendacao r order by dataRegistro desc"),
 		@NamedQuery(name = "Recomendacao.findAllRecomendacaoesAtivas", query = "select r from Recomendacao r where status = 'ATIVA' order by dataRegistro desc"),
 		@NamedQuery(name = "Recomendacao.findAllRecomendacaoesInativas", query = "select r from Recomendacao r where status = 'INATIVA' order by dataRegistro desc"),
-		@NamedQuery(name = "Recomendacao.findAllRecomendacaoesConfirmadas", query = "select r from Recomendacao r where status = 'CONFIRMADA' order by dataRegistro desc")})
-public class Recomendacao implements Generic{
+		@NamedQuery(name = "Recomendacao.findAllRecomendacaoesConfirmadas", query = "select r from Recomendacao r where status = 'CONFIRMADA' order by dataRegistro desc") })
+public class Recomendacao implements Generic {
 
 	private static final long serialVersionUID = 1L;
 	public static final String findAllRecomendacaoesUsuario = "Recomendacao.findAllRecomendacaoesUsuario";
@@ -32,7 +32,6 @@ public class Recomendacao implements Generic{
 	public static final String findAllRecomendacaoesAtivas = "Recomendacao.findAllRecomendacaoesAtivas";
 	public static final String findAllRecomendacaoesInativas = "Recomendacao.findAllRecomendacaoesInativas";
 	public static final String findAllRecomendacaoesConfirmadas = "Recomendacao.findAllRecomendacaoesConfirmadas";
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,16 +49,25 @@ public class Recomendacao implements Generic{
 	@OneToOne
 	private Livro livro;
 
+	@OneToOne
+	private Filme filme;
+
+	@OneToOne
+	private Musica musica;
+
 	public Recomendacao() {
 		interesse = new Interesse();
-		dataRegistro = Calendar.getInstance();		
+		dataRegistro = Calendar.getInstance();
 	}
 
-	public Recomendacao(Interesse interesse, Livro livro) {
+	public Recomendacao(Interesse interesse, Livro livro, Filme filme,
+			Musica musica) {
 		super();
 		this.dataRegistro = Calendar.getInstance();
 		this.interesse = interesse;
 		this.livro = livro;
+		this.filme = filme;
+		this.musica = musica;
 		this.status = RecomendacaoStatus.ATIVA;
 	}
 
@@ -105,19 +113,34 @@ public class Recomendacao implements Generic{
 
 	@Override
 	public boolean equals(Object obj) {
-		if ((obj instanceof Recomendacao) && ((Recomendacao) obj).getId().equals(this.getId())) { 
+		if ((obj instanceof Recomendacao)
+				&& ((Recomendacao) obj).getId().equals(this.getId())) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	@Override
-	public int hashCode(){
+	public int hashCode() {
 		return this.getId().hashCode();
-		
+
 	}
-	
+
+	public Filme getFilme() {
+		return filme;
+	}
+
+	public void setFilme(Filme filme) {
+		this.filme = filme;
+	}
+
+	public Musica getMusica() {
+		return musica;
+	}
+
+	public void setMusica(Musica musica) {
+		this.musica = musica;
+	}
 
 }
-

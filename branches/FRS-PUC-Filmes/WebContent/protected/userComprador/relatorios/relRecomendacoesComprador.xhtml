@@ -28,37 +28,38 @@
 						</h:outputText>
 					</p:column>
 
-					<p:column headerText="Categoria">
+					<p:column headerText="Categoria de Interesse">
 						<h:outputText
-							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaFilmeDeInteresse.categoria}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaMusicaDeInteresse.categoria}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
 
-					<p:column headerText="Livro">
-						<h:outputText value="#{recomendacao.livro.nome}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
+					<p:column headerText="Recomendação">
+						<h:outputText value="Livro: #{recomendacao.livro.nome}"  rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="Filme: #{recomendacao.filme.nome}"  rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="Musica: #{recomendacao.musica.nome}"  rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
-
+					
 					<p:column headerText="Nome do dono">
-						<h:outputText value="#{recomendacao.livro.dono.nome}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
+						<h:outputText value="#{recomendacao.livro.dono.nome}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="#{recomendacao.filme.dono.nome}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="#{recomendacao.musica.dono.nome}" rendered="#{recomendacao.musica!=null}"/>
+					</p:column>
+
+					<p:column headerText="Fone">
+						<h:outputText value="#{recomendacao.livro.dono.telefone}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="#{recomendacao.filme.dono.telefone}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="#{recomendacao.musica.dono.telefone}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
 
 					<p:column headerText="Email">
-						<h:outputText value="#{recomendacao.livro.dono.email}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
+						<h:outputText value="#{recomendacao.livro.dono.email}" rendered="#{recomendacao.livro!=null}"/>
+						<h:outputText value="#{recomendacao.filme.dono.email}" rendered="#{recomendacao.filme!=null}"/>
+						<h:outputText value="#{recomendacao.musica.dono.email}" rendered="#{recomendacao.musica!=null}"/>
 					</p:column>
-
-					<p:column headerText="Telefone">
-						<h:outputText value="#{recomendacao.livro.dono.telefone}">
-							<f:convertDateTime pattern="dd/MM/yyyy" />
-						</h:outputText>
-					</p:column>
-
 
 					<p:column headerText="Status">
 						<h:outputText value="#{recomendacao.status}" />

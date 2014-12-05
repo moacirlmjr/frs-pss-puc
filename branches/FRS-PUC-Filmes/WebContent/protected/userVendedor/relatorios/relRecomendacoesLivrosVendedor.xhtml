@@ -13,8 +13,8 @@
 
 		<p:fieldset legend="Relatório de Recomendações">
 			<h:form id="formPrincipal">
-			<p:messages autoUpdate="true" />
-			<p:growl autoUpdate="true" />
+				<p:messages autoUpdate="true" />
+				<p:growl autoUpdate="true" />
 
 				<p:dataTable var="recomendacao"
 					value="#{recomendacaoBean.recomendacoesCompradorVendedor}"
@@ -36,8 +36,14 @@
 
 					<p:column headerText="Categoria de Interesse">
 						<h:outputText
-							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}">
-						</h:outputText>
+							value="#{recomendacao.interesse.categoriaDeInteresse.categoria}"
+							rendered="#{recomendacao.livro!=null}" />
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaFilmeDeInteresse.categoria}"
+							rendered="#{recomendacao.filme!=null}" />
+						<h:outputText
+							value="#{recomendacao.interesse.categoriaMusicaDeInteresse.categoria}"
+							rendered="#{recomendacao.musica!=null}" />
 					</p:column>
 
 					<p:column headerText="Nome do Interessado">
