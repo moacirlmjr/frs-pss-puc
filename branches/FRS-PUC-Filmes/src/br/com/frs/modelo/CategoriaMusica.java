@@ -47,4 +47,20 @@ public class CategoriaMusica implements Generic, Categorizable {
 		this.categoria = categoria;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if ((obj instanceof CategoriaMusica)
+				&& ((CategoriaMusica) obj).getId().equals(this.getId())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+
+	}
+
 }

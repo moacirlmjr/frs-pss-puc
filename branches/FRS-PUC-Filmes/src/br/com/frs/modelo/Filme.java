@@ -161,5 +161,21 @@ public class Filme implements Generic, Recomendable {
 	public void setElenco(String elenco) {
 		this.elenco = elenco;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if ((obj instanceof Filme)
+				&& ((Filme) obj).getId().equals(this.getId())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+
+	}
 
 }
