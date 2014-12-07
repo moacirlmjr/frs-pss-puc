@@ -161,4 +161,20 @@ public class Musica implements Generic, Recomendable {
 		this.album = album;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if ((obj instanceof Musica)
+				&& ((Musica) obj).getId().equals(this.getId())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+
+	}
+
 }

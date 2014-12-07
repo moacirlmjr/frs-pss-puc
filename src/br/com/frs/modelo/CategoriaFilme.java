@@ -46,5 +46,21 @@ public class CategoriaFilme implements Generic, Categorizable {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if ((obj instanceof CategoriaFilme)
+				&& ((CategoriaFilme) obj).getId().equals(this.getId())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+
+	}
 
 }

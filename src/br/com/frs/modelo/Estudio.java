@@ -51,5 +51,21 @@ public class Estudio implements Generic {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if ((obj instanceof Estudio)
+				&& ((Estudio) obj).getId().equals(this.getId())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+
+	}
 
 }
