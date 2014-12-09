@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.7" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="br.com.frs.mbeans.CategoriaFilmeBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/CategoriaFilmeBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="223" x="246" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.com.frs.mbeans.LivroBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/LivroBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="330" x="509" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.com.frs.mbeans.RecomendacaoBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/RecomendacaoBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="341" x="879" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.com.frs.mbeans.MusicaBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/MusicaBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="330" x="1260" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.com.frs.mbeans.CategoriaMusicaBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/CategoriaMusicaBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="233" x="1630" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="br.com.frs.mbeans.EditoraBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/EditoraBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="153" x="1903" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.com.frs.mbeans.CategoriaBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/CategoriaBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="199" x="2096" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.com.frs.mbeans.EstudioBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/EstudioBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="157" x="2335" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.com.frs.mbeans.UsuarioBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/UsuarioBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="257" x="2532" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.com.frs.mbeans.GravadoraBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/GravadoraBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="191" x="2829" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="br.com.frs.mbeans.InteresseBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/InteresseBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="585" width="274" x="3060" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="br.com.frs.mbeans.ArquivoBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/ArquivoBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="134" x="3374" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="br.com.frs.mbeans.AgentBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/AgentBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="149" x="3918" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="br.com.frs.mbeans.FilmeBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/FilmeBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="330" x="3548" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="br.com.frs.mbeans.LoginBean" project="FRS-PUC-Filmes" 
+    file="/FRS-PUC-Filmes/src/br/com/frs/mbeans/LoginBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="190" x="4107" y="-38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
